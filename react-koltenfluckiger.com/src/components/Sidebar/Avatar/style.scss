@@ -1,0 +1,18 @@
+.avatar-container {
+  display: grid;
+  place-items: center;
+  margin-top: 30px;
+}
+
+.avatar-picture {
+  height: 37.5px;
+  border-radius: 50%;
+  border: 5px solid #F9DC5C;
+}
+
+.avatar-container h3 {
+    color: #000;
+    text-align: center;
+    font-size: 1rem;
+    padding: 5px;
+}
