@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
-import Projects from '../Projects';
+import Portfolio from '../Portfolio';
 import About from '../About';
 import Contact from '../Contact';
 
@@ -38,22 +38,24 @@ class Sidebar extends Component {
 
   render() {
     return (<Router>
+      <div className='sidebar-container'>
       <div className={this.isExtended
           ? 'sidebar-extended'
           : 'sidebar'}>
         <Avatar/>
         <ul className='sidebar-items'>
-          <Menu iconClass='fas sidebar-icon fa-bars' extendSidebar={this.extendSidebar}/>
+          <Menu variant='fas sidebar-icon fa-bars' extendSidebar={this.extendSidebar}/>
           {interallinks.map((link) => (
-            <Item key={link.key} href={link.href} iconClass={link.iconClass} title={link.title}/>
+            <Item key={link.key} href={link.href} variant={link.variant} title={link.title}/>
           ))}
           <Divider />
           {externallinks.map((link) => (
-            <ExternalItem key={link.key} href={link.href} iconClass={link.iconClass} title={link.title}/>
+            <ExternalItem key={link.key} href={link.href} variant={link.variant} title={link.title}/>
           ))}
         </ul>
       </div>
-      <Route path="/" exact component={Projects}/>
+    </div>
+      <Route path="/" exact component={Portfolio}/>
       <Route path="/about/" exact component={About}/>
       <Route path="/contact/" exact component={Contact}/>
     </Router>)

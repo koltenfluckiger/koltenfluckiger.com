@@ -1,0 +1,25 @@
+.search-bar {
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  display: flex;
+}
+
+.input-group-text {
+  font-size: 1rem;
+  color: #abacac;
+  border: none;
+  background-color: #fff;
+}
+
+#project-search {
+  height: 50px;
+  background-color: #fff;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}

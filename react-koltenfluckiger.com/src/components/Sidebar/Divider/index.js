@@ -11,7 +11,7 @@ class Divider extends Component {
   render() {
     return (
       <div className='sidebar-links'>
-      <Icon iconClass='fas fa-minus divider' />
+      <Icon variant='fas fa-minus divider' />
     </div>
     )
   }

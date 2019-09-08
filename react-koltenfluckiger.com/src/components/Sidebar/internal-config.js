@@ -2,17 +2,17 @@ const internallinks = [
    {
     key: 'Home',
     href: '/',
-    iconClass: 'fas sidebar-icon fa-home',
+    variant: 'fas sidebar-icon fa-home',
     title: 'Home'
   }, {
     key: 'About',
     href: '/about/',
-    iconClass: 'fas sidebar-icon fa-info-circle',
+    variant: 'fas sidebar-icon fa-info-circle',
     title: 'About'
   }, {
     key: 'Contact',
     href: '/contact/',
-    iconClass: 'fas sidebar-icon fa-at',
+    variant: 'fas sidebar-icon fa-at',
     title: 'Contact'
   }
 ]

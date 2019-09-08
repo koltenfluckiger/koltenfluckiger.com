@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
 import Icon from '../Icon';
 
@@ -9,7 +8,7 @@ class Menu extends Component {
 
   constructor(props) {
     super(props);
-    this.iconClass = props.iconClass;
+    this.variant = props.variant;
     this.extendSidebar = props.extendSidebar;
     this.extendSidebar = this.extendSidebar.bind(this);
   }
@@ -18,7 +17,7 @@ class Menu extends Component {
     return (<li>
       <a onClick={this.extendSidebar} className='sidebar-links'>
         <div>
-          <Icon iconClass={this.iconClass}/>
+          <Icon variant={this.variant}/>
         </div>
       </a>
     </li>)

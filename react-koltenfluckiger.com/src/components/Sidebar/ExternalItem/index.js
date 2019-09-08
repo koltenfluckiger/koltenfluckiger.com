@@ -10,7 +10,7 @@ class ExternalItem extends Component {
   constructor(props) {
     super(props);
     this.href = props.href;
-    this.iconClass = props.iconClass;
+    this.variant = props.variant;
     this.title = props.title;
   }
 
@@ -18,7 +18,7 @@ class ExternalItem extends Component {
     return (<li>
       <a href={this.href} className='sidebar-links'>
         <div>
-          <Icon iconClass={this.iconClass}/>
+          <Icon variant={this.variant}/>
         </div>
       </a>
     </li>)

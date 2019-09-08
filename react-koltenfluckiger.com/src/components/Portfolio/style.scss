@@ -1,0 +1,17 @@
+.portfolio-container {
+  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin-top: 22.5px;
+}
+@media (min-width: 1200px) {
+  .projects-tags-container {
+    max-width: 1140px;
+  }
+}
+
+.projects-tags-container {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+}

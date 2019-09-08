@@ -10,7 +10,7 @@ class Item extends Component {
   constructor(props) {
     super(props);
     this.href = props.href;
-    this.iconClass = props.iconClass;
+    this.variant = props.variant;
     this.title = props.title;
   }
 
@@ -18,7 +18,7 @@ class Item extends Component {
     return (<li>
       <NavLink exact to={this.href} className='sidebar-links' activeClassName='active'>
         <div>
-          <Icon iconClass={this.iconClass}/>
+          <Icon variant={this.variant}/>
         </div>
       </NavLink>
     </li>)
