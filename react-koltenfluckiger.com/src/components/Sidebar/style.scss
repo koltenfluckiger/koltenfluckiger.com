@@ -17,11 +17,21 @@
     display: none;
   }
 }
+@media screen and (max-width: 640px) {
+  .sidebar-mobile-visible {
+    transition: all 0.5s ease;
+    overflow: hidden;
+    width: 75px;
+    height: 100%;
+    background-color: #FFF;
+  }
+}
 
-.sidebar:hover{
-  transition: all .5s ease;
+.sidebar:hover {
+  transition: all 0.5s ease;
   width: 200px;
 }
+
 .sidebar-extended {
   transition: all 0.5s ease;
   overflow: hidden;
@@ -30,11 +40,11 @@
   width: 200px;
 }
 
-.sidebar-items{
+.sidebar-items {
   text-align: center;
 }
 
-.sidebar-items li a:hover{
+.sidebar-items li a:hover {
   color: #000;
   border-left: 4px solid #F9DC5C;
   text-indent: -2px;

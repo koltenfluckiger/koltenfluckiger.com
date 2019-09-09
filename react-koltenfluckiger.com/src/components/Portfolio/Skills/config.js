@@ -30,13 +30,13 @@ const frameworks = [
     'variant': 'framework-circle diamond-circle',
     'abbreviation': 'RT'
   }, {
-    'key': 'mysql',
-    'title': 'MySQL',
+    'key': 'databases',
+    'title': 'Databases',
     'subframeworks': [
-      'MySQL', 'Sequel Pro'
+      'MySQL', 'MongoDB'
     ],
     'variant': 'framework-circle green-circle',
-    'abbreviation': 'MY'
+    'abbreviation': 'DB'
   }, {
     'key': 'unix',
     'title': 'Unix',
@@ -45,8 +45,7 @@ const frameworks = [
     ],
     'variant': 'framework-circle blue-circle',
     'abbreviation': 'UN'
-  }
-  , {
+  }, {
     'key': 'web',
     'title': 'Web',
     'subframeworks': [
@@ -54,26 +53,21 @@ const frameworks = [
     ],
     'variant': 'framework-circle red-circle',
     'abbreviation': 'WB'
-  }
-  , {
+  }, {
     'key': 'versioncontrol',
     'title': 'Version Control',
     'subframeworks': [
-      'Git','GitHub', 'Bitbucket', 'GitLab'
+      'Git', 'GitHub', 'Bitbucket', 'GitLab'
     ],
     'variant': 'framework-circle lemon-circle',
     'abbreviation': 'VC'
-  }
-  , {
+  }, {
     'key': 'json',
     'title': 'JSON + XML',
-    'subframeworks': [
-      'Data Parsing'
-    ],
+    'subframeworks': ['Data Parsing'],
     'variant': 'framework-circle diamond-circle',
     'abbreviation': 'JS'
-  }
-  , {
+  }, {
     'key': 'adobecc',
     'title': 'Adobe CC',
     'subframeworks': [
