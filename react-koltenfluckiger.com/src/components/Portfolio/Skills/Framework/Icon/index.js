@@ -6,18 +6,23 @@ import './style.scss';
 class Icon extends Component {
 
   static propTypes = {
-    variant: PropTypes.string
+    variant: PropTypes.string,
+    abbreviation: PropTypes.string
   }
 
   constructor(props) {
+
     super(props);
     this.variant = props.variant;
+    this.abbreviation = props.abbreviation;
   }
 
   render() {
-    return (<span>
-      <i className={this.variant}></i>
-    </span>)
+    return (
+      <div className={this.variant}>
+        {this.abbreviation}
+      </div>
+    )
   }
 }
 

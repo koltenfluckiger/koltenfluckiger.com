@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Route, NavLink} from "react-router-dom";
+import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
 import './style.scss';
 
 class ExternalItem extends Component {
+
+  static propTypes = {
+    href: PropTypes.string,
+    variant: PropTypes.string,
+    title: PropTypes.string
+  }
 
   constructor(props) {
     super(props);

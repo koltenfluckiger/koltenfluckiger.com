@@ -1,0 +1,36 @@
+.skills-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex-basis: 50%;
+}
+
+.skills-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  padding: 15px;
+}
+
+.skills-card-subtitle-container {
+  margin: 2.5px 0 20px;
+}
+
+.skills-framework-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}

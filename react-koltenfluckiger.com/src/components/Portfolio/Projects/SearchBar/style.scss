@@ -5,21 +5,40 @@
   box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .input-group-text {
-  font-size: 1rem;
-  color: #abacac;
+  color: #ABACAC;
   border: none;
-  background-color: #fff;
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
 }
 
 #project-search {
   height: 50px;
-  background-color: #fff;
+  background-color: #FFF;
   border: none;
+  flex-grow: 1;
+  font-size: 1rem;
+
   &:focus {
     outline: none;
   }
+
+  &:placeholder {
+    color: #ABACAC;
+  }
+}
+
+.input-group-text .fa-times {
+  color: #F95E7A;
 }

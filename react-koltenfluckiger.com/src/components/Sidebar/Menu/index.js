@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import Icon from '../Icon';
 
 import './style.scss';
 
 class Menu extends Component {
+
+  static propTypes = {
+    variant: PropTypes.string,
+    extendSidebar: PropTypes.func
+  }
 
   constructor(props) {
     super(props);

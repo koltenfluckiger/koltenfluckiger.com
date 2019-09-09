@@ -1,0 +1,35 @@
+.framework-circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.blue-circle {
+  background-color: #EFF2F9;
+  color: #5289E1;
+}
+
+.red-circle {
+  background-color: #feeaf0;
+  color: #f95e7a;
+}
+
+.lemon-circle {
+  background-color: #FFF9CC;
+  color: #FFE100;
+}
+
+.diamond-circle {
+  background-color: #C7EEF9;
+  color: #56D5FA;
+}
+
+.green-circle {
+  background-color: #eaf7ed;
+  color: #39b24e;
+}

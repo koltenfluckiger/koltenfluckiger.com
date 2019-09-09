@@ -4,14 +4,43 @@
   transition: all 0.5s ease;
   margin-top: 22.5px;
 }
-@media (min-width: 1200px) {
-  .projects-tags-container {
+@media screen and (min-width: 1200px) {
+  .projects-skills-container {
     max-width: 1140px;
   }
 }
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .projects-skills-container {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .projects-skills-container {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .projects-skills-container {
+    max-width: 540px;
+  }
+}
 
-.projects-tags-container {
-  display: flex;
-  margin-right: auto;
-  margin-left: auto;
+@media screen and (max-width: 640px) {
+  .projects-skills-container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media screen and (min-width: 641px){
+  .projects-skills-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }

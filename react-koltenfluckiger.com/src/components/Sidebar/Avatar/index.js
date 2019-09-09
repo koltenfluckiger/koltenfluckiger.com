@@ -12,7 +12,7 @@ class Avatar extends Component {
         <img alt='Avatar' className='avatar-picture' src={source}/>
         <h3>Kolten's
           <br/>
-            Portfolio</h3>
+          Portfolio</h3>
       </div>
     </Link>)
   }

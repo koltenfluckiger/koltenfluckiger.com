@@ -23,6 +23,10 @@
   width: 200px;
 }
 .sidebar-extended {
+  transition: all 0.5s ease;
+  overflow: hidden;
+  height: 100%;
+  background-color: #FFF;
   width: 200px;
 }
 
