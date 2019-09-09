@@ -21,7 +21,7 @@ class Menu extends Component {
 
   render() {
     return (<li>
-      <a onClick={this.extendSidebar} className='sidebar-links'>
+      <a onClick={this.extendSidebar} style={{cursor: 'pointer'}} className='sidebar-links'>
         <div>
           <Icon variant={this.variant}/>
         </div>
