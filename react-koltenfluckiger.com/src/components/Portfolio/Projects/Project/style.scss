@@ -1,0 +1,46 @@
+.project-container {
+  border: none;
+  background-color: #FFF;
+  margin-bottom: 25px;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
+  display: flex;
+  padding: 1.25rem;
+  align-items: center;
+  margin: 22.5px 0;
+}
+
+.project-screenshot-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.125);
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.125);
+  margin: 0px 15px;
+}
+
+.project-details-container {
+  padding: 0px 15px;
+  flex-grow: 1;
+  align-content: center;
+}
+
+.project-date-container {
+  padding: 0px 15px;
+}
+
+.project-title {
+  color: #000;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.project-date {
+  color: #7F818C;
+  font-size: 80%;
+}
+
+.project-frameworks {
+  color: #4C87FC;
+}
