@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(require('./routes'));
 
-})
-
-app.listen(3000)
+app.listen(3001)
