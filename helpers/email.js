@@ -9,8 +9,8 @@ send = function(emailMessage, from, name) {
       text: emailMessage,
       from: from,
       cc: from,
-      to: "koltenfluckiger@gmail.com",
-      subject: "Portfolio Contact Email"
+      to: 'koltenfluckiger@gmail.com',
+      subject: 'Portfolio Contact Email'
     }, function(err, message) {
       reject(Error(err, message));
     })

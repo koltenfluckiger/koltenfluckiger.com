@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Route, Link } from "react-router-dom";
+import { BrowserRouter as Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './style.scss';

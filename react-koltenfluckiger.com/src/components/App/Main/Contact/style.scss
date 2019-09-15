@@ -8,6 +8,16 @@ textarea {
   resize: vertical;
 }
 
+.honneybunny {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+}
+
 .contact-container {
   width: 100%;
   transition: all 0.5s ease;
@@ -123,7 +133,7 @@ textarea {
 }
 
 .buttons-container {
-  margin: 10px 0px;
+  margin: 10px 0;
 }
 
 .button {
@@ -147,6 +157,7 @@ textarea {
   transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
   margin-right: 2px;
 }
+
 .green {
   background-color: #28A745;
 }

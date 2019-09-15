@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import Portfolio from '../Portfolio';
-import About from '../About';
-import Contact from '../Contact';
-import Error from '../Error';
 
 import Avatar from './Avatar';
 import Menu from './Menu';
@@ -13,8 +8,8 @@ import Item from './Item';
 import Divider from './Divider';
 import ExternalItem from './ExternalItem';
 
-import InternalLinks from '../../static/links-internal-config';
-import ExternalLinks from '../../static/links-external-config';
+import InternalLinks from '../../../../static/links-internal-config';
+import ExternalLinks from '../../../../static/links-external-config';
 import './style.scss';
 
 class Sidebar extends Component {
@@ -37,7 +32,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    return (<Router>
+    return (
       <div className='sidebar-container'>
         <div className={this.state.isExtended
             ? 'sidebar-extended'
@@ -49,13 +44,6 @@ class Sidebar extends Component {
           </ul>
         </div>
       </div>
-      <Switch>
-      <Route path="/" exact component={Portfolio}/>
-      <Route path="/about" exact component={About}/>
-      <Route path="/contact" exact component={Contact}/>
-      <Route component={Error} />
-      </Switch>
-    </Router>
   )
   }
 }

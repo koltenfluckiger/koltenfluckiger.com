@@ -7,11 +7,11 @@ class SearchBar extends Component {
   render() {
     return (<div className='search-bar'>
       <span className='input-group-text'>
-        <i className="fas fa-search"></i>
+        <i className='fas fa-search'></i>
       </span>
-      <input id='project-search' placeholder='Search' autoComplete="off"></input>
+      <input id='project-search' placeholder='Search' autoComplete='off'></input>
       <span className='input-group-text'>
-        <i className="fa fa-lg fa-times"></i>
+        <i className='fa fa-lg fa-times'></i>
       </span>
     </div>)
   }

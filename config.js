@@ -1,7 +1,7 @@
 const config = {
   "SendGrid": {
     "user": "apikey",
-    "password": "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",
+    "password": "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",
     "server": "smtp.sendgrid.net",
     "port": "587"
   }

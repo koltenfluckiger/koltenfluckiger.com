@@ -8,8 +8,8 @@ class Contact extends Component {
     return (<div className='contact-container'>
       <div className='contact-card'>
         <div className='contact-link-container'>
-          <a href="/" className="back-button">
-            <i className="fas fa-arrow-left"></i>
+          <a href='/' className='back-button'>
+            <i className='fas fa-arrow-left'></i>
           </a>
         </div>
         <div className='contact-card-content'>
@@ -17,23 +17,29 @@ class Contact extends Component {
           <h6>Send me a message with any inquires you may have.</h6>
         </div>
         <div className='contact-form-container'>
-          <form action='/email' method='post'>
+          <form action='/email' method='post' encType='application/x-www-form-urlencoded'>
             <div>
               <label className='field-label'>Name:</label>
-              <input type="text" name="name" className='contact-field-input' autoComplete='off'></input>
+              <input type='text' name='namerqlfld' className='contact-field-input' autoComplete='off'></input>
             </div>
             <div>
               <label className='field-label'>Email:</label>
-              <input type="text" name="email" className='contact-field-input' autoComplete='off'></input>
+              <input type='text' name='emailfldrql' className='contact-field-input' autoComplete='off'></input>
             </div>
             <div>
               <label className='field-label'>Message:</label>
-              <textarea name="message" rows='5' className='contact-message-field' autoComplete='off'></textarea>
+              <textarea name='messagerldrfl' rows='5' className='contact-message-field' autoComplete='off'></textarea>
             </div>
             <div className='buttons-container'>
               <button type='submit' className='button green'>Send Message</button>
               <a href='mailto:koltenfluckiger@gmail.com' className='button blue'>Email Directly</a>
             </div>
+            <label className='honneybunny'></label>
+            <input className='honneybunny' autoComplete='off' type='text' id='name' name='name' placeholder='Your name here'></input>
+            <label className='honneybunny'></label>
+            <input className='honneybunny' autoComplete='off' type='email' id='email' name='email' placeholder='Your e-mail here'></input>
+            <label className='honneybunny'></label>
+            <textarea name='message' rows='5' className='contact-message-field' autoComplete='off'></textarea>
           </form>
         </div>
       </div>

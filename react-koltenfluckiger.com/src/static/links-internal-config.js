@@ -6,12 +6,12 @@ const internallinks = [
     title: 'Home'
   }, {
     key: 'About',
-    href: '/about/',
+    href: '/about',
     variant: 'fas sidebar-icon fa-info-circle',
     title: 'About'
   }, {
     key: 'Contact',
-    href: '/contact/',
+    href: '/contact',
     variant: 'fas sidebar-icon fa-at',
     title: 'Contact'
   }
