@@ -2,11 +2,16 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
 
-import Dashboard from '../../App/Admin/Dashboard';
-
-function fakeAuth(callback) {
-  var isAuthenicated = true;
-  callback(isAuthenicated);
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true
+    setTimeout(cb, 100) // fake async
+  },
+  signout(cb) {
+    this.isAuthenticated = false
+    setTimeout(cb, 100) // fake async
+  }
 }
 
 class PrivateRoute extends Component {
@@ -28,8 +33,18 @@ class PrivateRoute extends Component {
     this.component = props.component;
   }
 
+  componentDidMount(){
+    fakeAuth.authenticate();
+  }
+
   render() {
-    return (<div></div>)
+    return (<div>
+      {
+        fakeAuth.isAuthenicated
+          ? <Route to={this.path} component={this.component}/>
+          : <Redirect to={this.redirect}/>
+      }
+    </div>)
   }
 }
 
