@@ -2,18 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
 
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100) // fake async
-  }
-}
-
 class PrivateRoute extends Component {
 
   static propTypes = {
@@ -33,14 +21,10 @@ class PrivateRoute extends Component {
     this.component = props.component;
   }
 
-  componentDidMount(){
-    fakeAuth.authenticate();
-  }
-
   render() {
     return (<div>
       {
-        fakeAuth.isAuthenicated
+        true
           ? <Route to={this.path} component={this.component}/>
           : <Redirect to={this.redirect}/>
       }

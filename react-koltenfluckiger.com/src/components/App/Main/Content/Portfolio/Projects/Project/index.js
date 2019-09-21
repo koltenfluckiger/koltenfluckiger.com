@@ -30,7 +30,7 @@ class Project extends Component {
         </div>
       </div>
       <div className='project-date-container'>
-        <p className='project-date'>June 18th 2019</p>
+        <p className='project-date'>Sept 18th 2019</p>
       </div>
     </div>
   )

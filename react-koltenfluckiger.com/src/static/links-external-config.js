@@ -1,4 +1,4 @@
-const externallinks = [
+const ExternalLinks = [
   {
     key: 'GitHub',
     href: 'https://github.com/koltenfluckiger',
@@ -11,4 +11,4 @@ const externallinks = [
     title: 'LinkedIn'
   }
 ]
-export default externallinks;
+export default ExternalLinks;

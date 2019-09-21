@@ -17,7 +17,7 @@ class Contact extends Component {
           <h6>Send me a message with any inquires you may have.</h6>
         </div>
         <div className='contact-form-container'>
-          <form action='/email' method='post' encType='application/x-www-form-urlencoded'>
+          <form action='/contact/email/send' method='post' encType='application/x-www-form-urlencoded'>
             <div>
               <label className='field-label'>Name:</label>
               <input type='text' name='namerqlfld' className='contact-field-input' autoComplete='off'></input>
@@ -39,7 +39,7 @@ class Contact extends Component {
             <label className='honneybunny'></label>
             <input className='honneybunny' autoComplete='off' type='email' id='email' name='email' placeholder='Your e-mail here'></input>
             <label className='honneybunny'></label>
-            <textarea name='message' rows='5' className='contact-message-field' autoComplete='off'></textarea>
+            <textarea className='honneybunny' name='message' rows='5' autoComplete='off'></textarea>
           </form>
         </div>
       </div>

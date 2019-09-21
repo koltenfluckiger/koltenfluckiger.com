@@ -37,7 +37,7 @@
   .projects-skills-container {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
     margin-right: auto;
     margin-left: auto;
     padding-right: 15px;

@@ -1,8 +1,8 @@
 .skills-container {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
+  display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
+  flex-direction: column; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; -o-flex-direction: column;
   padding-right: 15px;
   padding-left: 15px;
   flex-basis: 50%;
@@ -11,11 +11,11 @@
 .skills-card-container {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -ms-flex-direction: column; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; -o-flex-direction: column;
+  flex-direction: column; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; -o-flex-direction: column;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -31,6 +31,6 @@
 .skills-framework-container {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
   flex-wrap: wrap;
 }

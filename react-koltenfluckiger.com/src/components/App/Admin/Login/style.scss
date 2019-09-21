@@ -1,0 +1,18 @@
+body {
+  background-color: #F6F7FB;
+}
+
+.login-container {
+  margin: auto;
+  background-color: #FFF;
+  display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
+  flex-direction: column; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; -o-flex-direction: column;
+  border: none;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.05);
+  padding: 1.25rem;
+  align-items: center;
+}
+
+.input-container {
+  margin: 10px;
+}

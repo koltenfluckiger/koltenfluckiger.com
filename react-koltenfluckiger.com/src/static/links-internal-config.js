@@ -1,4 +1,4 @@
-const internallinks = [
+const InternalLinks = [
    {
     key: 'Home',
     href: '/',
@@ -17,4 +17,4 @@ const internallinks = [
   }
 ]
 
-export default internallinks;
+export default InternalLinks;

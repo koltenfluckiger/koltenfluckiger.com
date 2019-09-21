@@ -23,9 +23,7 @@ class ExternalItem extends Component {
   render() {
     return (<li>
       <a href={this.href} className='sidebar-links'>
-        <div>
           <Icon variant={this.variant}/>
-        </div>
       </a>
     </li>)
   }

@@ -13,9 +13,6 @@ class Projects extends Component {
       <Title text='Projects'/>
       <SearchBar/>
       <Project />
-      <Project />
-      <Project />
-      <Project />
     </div>)
   }
 }

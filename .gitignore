@@ -3,3 +3,5 @@
 .git
 /builds
 config.js
+server.cert
+server.key

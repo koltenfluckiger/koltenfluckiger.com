@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Portfolio from './Portfolio';
 import About from '../About';
 import Contact from '../Contact';
-import Error from '../../../Routing/Error';
 
 class Content extends Component {
 
@@ -12,9 +11,8 @@ class Content extends Component {
     return (
       <Switch>
         <Route path="/" exact component={Portfolio}/>
-        <Route path="/about" exact component={About}/>
-        <Route path="/contact" exact component={Contact}/>
-        <Route component={Error} />
+        <Route path="/about" strict component={About}/>
+        <Route path="/contact" strict component={Contact}/>
       </Switch>
     )
   }

@@ -6,7 +6,7 @@ import Icon from '../Icon';
 
 import './style.scss';
 
-class Item extends Component {
+class InternalLink extends Component {
 
   static propTypes = {
     href: PropTypes.string,
@@ -23,13 +23,11 @@ class Item extends Component {
 
   render() {
     return (<li>
-      <NavLink exact to={this.href} className='sidebar-links' activeClassName='active'>
-        <div>
+      <NavLink strict to={this.href} className='sidebar-links' activeClassName='active'>
           <Icon variant={this.variant}/>
-        </div>
       </NavLink>
     </li>)
   }
 }
 
-export default Item;
+export default InternalLink;
