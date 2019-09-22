@@ -23,7 +23,7 @@ class InternalLink extends Component {
 
   render() {
     return (<li>
-      <NavLink strict to={this.href} className='sidebar-links' activeClassName='active'>
+      <NavLink exact to={this.href} className='sidebar-links' activeClassName='active'>
           <Icon variant={this.variant}/>
       </NavLink>
     </li>)

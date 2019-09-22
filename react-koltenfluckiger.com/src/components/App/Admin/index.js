@@ -12,11 +12,13 @@ class Admin extends Component {
 
   render() {
     return (
+      <Router>
       <Switch>
-        <Route path={`${this.props.match.path}/login`} component={Login}/>
-        <PrivateRoute path={`${this.props.match.path}/dashboard`} component={Dashboard} redirect='/admin/login'/>
+        <Route exact path={`${this.props.match.path}/login`} component={Login}/>
+        <PrivateRoute exact path={`${this.props.match.path}/dashboard`} component={Dashboard} redirect='/admin/login'/>
         <Route component={Error}/>
       </Switch>
+    </Router>
     )
   }
 }

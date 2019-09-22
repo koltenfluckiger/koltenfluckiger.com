@@ -4,10 +4,6 @@ var logger = require('node-logger').createLogger('/tmp/development.log');
 
 exports.send_email = (req, res) => {
 
-  console.log('in send_email');
-  console.log(req);
-  console.log(res);
-
   /* Get the real field values */
   const name = req.body.namerqlfld;
   const email = req.body.emailfldrql;

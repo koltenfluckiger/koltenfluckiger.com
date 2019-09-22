@@ -33,7 +33,8 @@ class Sidebar extends Component {
   }
 
   render() {
-    return (<div className='sidebar-container'>
+    return (
+      <div className='sidebar-container'>
         <div className={this.state.isExtended
             ? 'sidebar-extended'
             : 'sidebar'}>

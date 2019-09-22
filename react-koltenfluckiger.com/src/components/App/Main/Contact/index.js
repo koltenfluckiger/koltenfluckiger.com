@@ -10,7 +10,7 @@ class Contact extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    console.log(e.target.value);
+    console.log(e.target);
   }
 
   render() {
