@@ -4,6 +4,15 @@ import './style.scss';
 
 class Contact extends Component {
 
+  constuctor(props){
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    console.log(e.target.value);
+  }
+
   render() {
     return (<div className='contact-container'>
       <div className='contact-card'>
@@ -17,18 +26,18 @@ class Contact extends Component {
           <h6>Send me a message with any inquires you may have.</h6>
         </div>
         <div className='contact-form-container'>
-          <form action='/contact/email/send' method='post' encType='application/x-www-form-urlencoded'>
+          <form id='email-form' onSubmit={this.handleSubmit} method='post' encType='application/x-www-form-urlencoded'>
             <div>
               <label className='field-label'>Name:</label>
-              <input type='text' name='namerqlfld' className='contact-field-input' autoComplete='off'></input>
+              <input id='namerqlfld' type='text' name='namerqlfld' className='contact-field-input' autoComplete='off'></input>
             </div>
             <div>
               <label className='field-label'>Email:</label>
-              <input type='text' name='emailfldrql' className='contact-field-input' autoComplete='off'></input>
+              <input id='emailfldrql' type='text' name='emailfldrql' className='contact-field-input' autoComplete='off'></input>
             </div>
             <div>
               <label className='field-label'>Message:</label>
-              <textarea name='messagerldrfl' rows='5' className='contact-message-field' autoComplete='off'></textarea>
+              <textarea id='messagerldrfl' name='messagerldrfl' rows='5' className='contact-message-field' autoComplete='off'></textarea>
             </div>
             <div className='buttons-container'>
               <button type='submit' className='button green'>Send Message</button>
@@ -39,7 +48,7 @@ class Contact extends Component {
             <label className='honneybunny'></label>
             <input className='honneybunny' autoComplete='off' type='email' id='email' name='email' placeholder='Your e-mail here'></input>
             <label className='honneybunny'></label>
-            <textarea className='honneybunny' name='message' rows='5' autoComplete='off'></textarea>
+            <textarea id='message' className='honneybunny' name='message' rows='5' autoComplete='off'></textarea>
           </form>
         </div>
       </div>

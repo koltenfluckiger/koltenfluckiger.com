@@ -2,9 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 
-const contactController = require('../controllers/contactController');
+const contactRouter = require('./contact');
 
-router.use(bodyParser.urlencoded({extended: true}));
-router.use('/contact', contactController.send_email);
+router.use('/contact', contactRouter);
 
 module.exports = router;
