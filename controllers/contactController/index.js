@@ -4,26 +4,15 @@ var logger = require('node-logger').createLogger('/tmp/development.log');
 
 exports.send_email = (req, res) => {
 
+  console.log(req.body);
   /* Get the real field values */
-  const name = req.body.namerqlfld;
-  const email = req.body.emailfldrql;
-  const message = req.body.messagerldrfl;
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message;
 
-  /* Get the honeypot field values */
-  const honeyName = req.body.name;
-  const honeyEmail = req.body.email;
-  const honeyMessage = req.body.message;
-
-  /* If a bot filled out any of these fields, then just redirect back to home */
-
-   if (honeyName || honeyEmail || honeyMessage) {
-     res.redirect('/');
-   } else {
-     Email.send(message, email, name).then((result) => {
-       logger.info('Success' + result);
-     }, function(error) {
-       logger.info(error);
-     });
-     res.redirect('/contact');
-   }
+  Email.send(message, email, name).then((result) => {
+    res.sendStatus(301);
+  }, function(error) {
+    console.log(error);
+  });
 }

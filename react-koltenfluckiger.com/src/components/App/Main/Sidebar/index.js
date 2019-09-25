@@ -33,21 +33,17 @@ class Sidebar extends Component {
   }
 
   render() {
-    return (
-      <div className='sidebar-container'>
-        <div className={this.state.isExtended
-            ? 'sidebar-extended'
-            : 'sidebar'}>
-          <Avatar/>
-          <ul className='sidebar-items'>
-            <Menu variant='fas sidebar-icon fa-bars' extendSidebar={this.extendSidebar}/>
-            {InternalLinks.map((link) => (<InternalLink key={link.key} href={link.href} variant={link.variant} title={link.title}/>))}
-            <Divider/>
-            {ExternalLinks.map((link) => (<ExternalLink key={link.key} href={link.href} variant={link.variant} title={link.title}/>))}
-          </ul>
-        </div>
+    return (<div className='sidebar-container'>
+      <div className={this.state.isExtended
+          ? 'sidebar-extended'
+          : 'sidebar'}>
+        <Avatar/>
+        <ul className='sidebar-items'>
+          <Menu variant='fas sidebar-icon fa-bars' extendSidebar={this.extendSidebar}/> {InternalLinks.map((link) => (<InternalLink key={link.key} href={link.href} variant={link.variant} title={link.title}/>))}
+          <Divider/> {ExternalLinks.map((link) => (<ExternalLink key={link.key} href={link.href} variant={link.variant} title={link.title}/>))}
+        </ul>
       </div>
-  )
+    </div>)
   }
 }
 

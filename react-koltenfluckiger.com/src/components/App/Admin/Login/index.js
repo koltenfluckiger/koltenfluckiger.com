@@ -14,16 +14,16 @@ class Login extends Component {
         <h2>Login</h2>
       </div>
       <form action='/admin/login' method='post'>
-        <div className='input-container'>
-          <input type='text' name='username' placeholder='Username'/>
+        <div className='login-input-container'>
+          <input className='login-field-input' type='text' name='username' placeholder='Username'/>
         </div>
-        <div className='input-container'>
-          <input type='password' name='password' placeholder='Password'/>
+        <div className='login-input-container'>
+          <input className='login-field-input' type='password' name='password' placeholder='Password'/>
         </div>
-        <div className='input-container'>
-          <input type='password' name='secretKey' placeholder='Secret Key'/>
+        <div className='login-input-container'>
+          <input className='login-field-input' type='password' name='secretKey' placeholder='Secret Key'/>
         </div>
-        <div className='input-container'>
+        <div className='login-input-container'>
           <button type='submit'>Login</button>
         </div>
       </form>

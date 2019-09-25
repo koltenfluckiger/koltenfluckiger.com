@@ -6,16 +6,12 @@
 textarea {
   overflow: auto;
   resize: vertical;
-}
+  resize: none;
 
-.honneybunny {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 0;
-  width: 0;
-  z-index: -1;
+  &:invalid {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 .contact-container {
@@ -49,11 +45,20 @@ textarea {
   border: none;
   -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
   box-shadow: 0 5px 15px 0 rgba(0,0,0,.05);
-  display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   padding: 25px;
   margin-right: auto;
   margin-left: auto;
-  flex-direction: column; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; -o-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  transition: all 0.5s ease;
 }
 
 .contact-card-content {
@@ -61,8 +66,16 @@ textarea {
 }
 
 .contact-form-container {
-  display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
-  flex-direction: column; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; -o-flex-direction: column;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
 }
 
 .contact-message-field {
@@ -167,4 +180,37 @@ textarea {
 .blue {
   background-color: #4C87FC;
   border: 1px solid transparent;
+}
+
+.contact-input-container {
+  margin: 10px 0;
+}
+
+.error-input-container {
+  margin: 10px 0;
+  padding: 12px;
+}
+
+.status-container {
+  margin: 10px 0;
+  padding: 12px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+}
+
+.error {
+  color: #D8000C;
+  background-color: #FFD2D2;
+}
+
+.status-icon {
+  margin-right: 15px;
 }

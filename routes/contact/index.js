@@ -6,7 +6,8 @@ const logger = require('node-logger').createLogger('/tmp/development.log');
 const Email = new(require('../../helpers/email'))();
 
 // EMAIL ROUTES
-router.use(bodyParser.urlencoded({extended: true}));
+router.use(bodyParser.json());
+
 router.post('/email/send', contact_controller.send_email);
 
 module.exports = router;

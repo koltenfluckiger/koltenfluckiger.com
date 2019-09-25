@@ -19,11 +19,11 @@ class Email {
         to: 'koltenfluckiger@gmail.com',
         subject: 'Portfolio Contact Email'
       }, function(err, message) {
-        logger.info(err, message)
+        logger.info(err, message);
         reject(Error(err, message));
-      })
-      logger.info('Message was sent succesfully');
-      resolve('Success');
+      });
+      logger.info('Successfully sent email at' + Date.now());
+      resolve();
     });
   };
 
