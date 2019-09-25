@@ -12,35 +12,13 @@ class Contact extends Component {
       error: false,
       success: false,
       emailIsValid: true,
-      nameIsValid: true,
-      name: "",
-      email: "",
-      message: ""
+      nameIsValid: true
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
     this.validateFormInput = this.validateFormInput.bind(this);
   }
 
-  handleInputChange(e) {
-
-    switch (e.target.name) {
-      case 'name':
-        this.setState({name: e.target.value});
-        break;
-      case 'email':
-        this.setState({email: e.target.value});
-        break;
-      case 'message':
-        this.setState({message: e.target.value});
-        break;
-      default:
-        break;
-    }
-  }
-
   validateFormInput(e) {
-
     switch (e.target.name) {
       case 'email':
         const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
@@ -58,9 +36,9 @@ class Contact extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const name = this.state.name;
-    const email = this.state.email;
-    const message = this.state.message;
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
 
     fetch('/contact/email/send', {
       method: 'POST',
@@ -71,11 +49,9 @@ class Contact extends Component {
       body: JSON.stringify({name: name, email: email, message: message})
     }).then(response => {
       this.setState({success: true});
-
       setTimeout(() => {
         this.props.history.push("/");
       }, 4000);
-
     }).catch((err, message) => {
       this.setState({error: true});
       setTimeout(() => {
@@ -85,7 +61,6 @@ class Contact extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (<div className='contact-container'>
       <div className='contact-card'>
         <div className='contact-link-container'>
@@ -102,7 +77,7 @@ class Contact extends Component {
             <div>
               <label className='field-label'>Name:</label>
               <div className='contact-input-container'>
-                <input onBlur={this.validateFormInput} onChange={this.handleInputChange} type='text' name='name' className='contact-field-input' autoComplete='off' required="required"></input>
+                <input onBlur={this.validateFormInput} type='text' name='name' className='contact-field-input' autoComplete='off' required="required"></input>
                 {
                   (!this.state.nameIsValid)
                     ? <div className='error-input-container error'>
@@ -115,7 +90,7 @@ class Contact extends Component {
             <div>
               <label className='field-label'>Email:</label>
               <div className='contact-input-container'>
-                <input onBlur={this.validateFormInput} onChange={this.handleInputChange} type='email' name='email' className='contact-field-input' autoComplete='off' required="required"></input>
+                <input onBlur={this.validateFormInput} type='email' name='email' className='contact-field-input' autoComplete='off' required="required"></input>
                 {
                   (!this.state.emailIsValid)
                     ? <div className='error-input-container error'>
@@ -128,7 +103,7 @@ class Contact extends Component {
             <div>
               <label className='field-label'>Message:</label>
               <div className='contact-input-container'>
-                <textarea onChange={this.handleInputChange} name='message' rows='5' className='contact-message-field' autoComplete='off' maxLength="300" required="required"></textarea>
+                <textarea name='message' rows='5' className='contact-message-field' autoComplete='off' maxLength="300" required="required"></textarea>
               </div>
             </div>
             <div className='buttons-container'>

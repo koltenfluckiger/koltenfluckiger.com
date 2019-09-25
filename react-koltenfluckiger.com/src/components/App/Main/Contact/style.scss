@@ -1,23 +1,10 @@
-.field-label {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-textarea {
-  overflow: auto;
-  resize: vertical;
-  resize: none;
-
-  &:invalid {
-    outline: none;
-    box-shadow: none;
-  }
-}
 
 .contact-container {
   width: 100%;
   transition: all 0.5s ease;
   margin-top: 22.5px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 @media screen and (min-width: 1200px) {
   .contact-card {
@@ -170,6 +157,17 @@ textarea {
   transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
   margin-right: 2px;
   cursor: pointer;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+  resize: none;
+
+  &:invalid {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 .green {

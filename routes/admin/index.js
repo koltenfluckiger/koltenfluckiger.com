@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const contact_controller = new(require('../../controllers/contactController'))();
+const admin_controller = new(require('../../controllers/adminController'))();
 
-// EMAIL ROUTES
+// ADMIN ROUTES
 router.use(bodyParser.json());
 
-router.post('/email/send', contact_controller.send_email);
+router.post('/login', admin_controller.auth);
 
 module.exports = router;
