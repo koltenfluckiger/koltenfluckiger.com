@@ -33,31 +33,33 @@ class Contact extends Component {
     }
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
 
     const name = e.target.name.value;
     const email = e.target.email.value;
     const message = e.target.message.value;
 
-    fetch('/contact/email/send', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({name: name, email: email, message: message})
-    }).then(response => {
-      this.setState({success: true});
-      setTimeout(() => {
-        this.props.history.push("/");
-      }, 4000);
-    }).catch((err, message) => {
+    try {
+      const response = await fetch('/contact/email/send', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name: name, email: email, message: message})
+      })
+      if (response.ok) {
+        this.setState({success: true});
+        setTimeout(() => {
+          this.props.history.push("/");
+        }, 4000);
+      } else {
+        throw new Error();
+      }
+    } catch  {
       this.setState({error: true});
-      setTimeout(() => {
-        this.props.history.push("/contact");
-      }, 4000);
-    });
+    }
   }
 
   render() {
@@ -124,7 +126,7 @@ class Contact extends Component {
               this.state.error
                 ? <div className='status-container show error'>
                     <i className="fa fa-times-circle status-icon"></i>
-                    Your messsage was not sent successfully.Please try again later.
+                    Your messsage was not sent successfully. Please try again later.
                   </div>
                 : <></>
             }

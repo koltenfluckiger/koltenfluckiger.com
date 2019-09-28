@@ -10,12 +10,13 @@ class Login extends Component {
       username: "",
       password: "",
       secretKey: "",
-      rememberMe: false
+      rememberMe: false,
+      isError: false
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
 
     const username = e.target.username.value;
@@ -23,18 +24,24 @@ class Login extends Component {
     const secretKey = e.target.secretKey.value;
     const rememberMe = e.target.rememberMe.checked;
 
-    fetch('/admin/login', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({username: username, password: password, secretKey: secretKey})
-    }).then(response => {
-      console.log('Logged in successfully', response);
-    }).catch((err, message) => {
-      console.log(err, message);
-    })
+    try {
+    const response = await fetch('/admin/login', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username: username, password: password, secretKey: secretKey})
+      })
+      if (response.ok) {
+          this.props.history.push("/admin/dashboard");
+      }
+      else {
+        throw new Error();
+      }
+    } catch (err) {
+      this.setState({isError: true});
+    }
   }
 
   render() {
@@ -66,6 +73,7 @@ class Login extends Component {
               <div className="group">
                 <input type="submit" className="button" value="Sign In"/>
               </div>
+              {this.state.isError ? <div className='error-input-container error'>There was an issue with the login. Please try again.</div> : <></>}
             </div>
           </div>
         </form>

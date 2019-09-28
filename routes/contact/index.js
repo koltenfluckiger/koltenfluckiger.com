@@ -1,11 +1,11 @@
-const express = require('express');
-const router = express.Router();
-const bodyParser = require('body-parser');
-const contact_controller = new(require('../../controllers/contactController'))();
+const Express = require('express');
+const Router = Express.Router();
+const BodyParser = require('body-parser');
+const ContactController = new(require('../../controllers/contactcontroller'))();
+
+Router.use(BodyParser.json());
 
 // EMAIL ROUTES
-router.use(bodyParser.json());
+Router.post('/email/send', ContactController.sendEmail)
 
-router.post('/email/send', contact_controller.send_email);
-
-module.exports = router;
+module.exports = Router;

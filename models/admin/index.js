@@ -1,44 +1,50 @@
 const mongoose = require('mongoose');
-const crypto = require('crypto');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const config = require('../../config.js');
 
 class Admin {
 
-  constructor(database) {
-    this.database = database;
+  constructor(databaseName) {
+    this.databaseName = databaseName;
     this.options = {
       useNewUrlParser: true,
       useUnifiedTopology: true
     }
   }
 
-  getConnection() {
-    return mongoose.admin_conn;
-  }
-
-  disconnectConnection() {
-    mongoose.admin_conn.close();
-  }
-
   setup() {
-    mongoose.admin_conn = mongoose.createConnection('mongodb://localhost:27017/' + this.database, this.options);
+    mongoose.admin_conn = mongoose.createConnection('mongodb://localhost:27017/' + this.databaseName, this.options);
     const adminSchema = new mongoose.Schema({_id: Number, username: String, password: String, secretKey: String})
     this.model = mongoose.admin_conn.model('users', adminSchema);
   }
 
-  hash(password) {
-    return crypto.createHash('sha1').update(password).digest('base64');
+  async compare(password, hashPassword, secretKey, hashSecretKey) {
+    try {
+      const passwordValid = await bcrypt.compare(password, hashPassword);
+      const secretKeyValid = await bcrypt.compare(secretKey, hashSecretKey);
+
+      if (passwordValid && secretKeyValid) {
+        return Promise.resolve();
+      } else {
+        return Promise.reject();
+      }
+    } catch  {
+      return Promise.reject();
+    }
   }
 
-  authenicate(username, password, secretKey) {
-    return new Promise((resolve, reject) => {
-      this.model.findOne({username: username}).then(user => {
-        if (user.password === this.hash(password)) {
-          resolve();
-        }
-      }).catch(error => {
-        reject(error);
-      })
-    })
+  async authenicate(username, password, secretKey) {
+    try {
+      const user = await this.model.findOne({username: username});
+      const validCreds = await this.compare(password, user.password, secretKey, user.secretKey);
+      const token = await jwt.sign({
+        username: username
+      }, config.secret, {expiresIn: '24h'});
+      return Promise.resolve(JSON.stringify({success: true, message: "Authenication successful", token: token}));
+    } catch (err) {
+      return Promise.reject(err);
+    }
   }
 }
 

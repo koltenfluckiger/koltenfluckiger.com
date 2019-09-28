@@ -8,6 +8,14 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
   }
+  async componentDidMount(){
+    try {
+    const response = await fetch('/admin/dashboard');
+    console.log(response);
+    } catch {
+      console.log('Error');
+    }
+  }
 
   render() {
     return (

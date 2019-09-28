@@ -1,11 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const bodyParser = require('body-parser');
+const Express = require('express');
+const Router = Express.Router();
 
-const contactRouter = require('./contact');
-const adminRouter = require('./admin');
+const ContactRouter = require('./contact');
+const AdminRouter = require('./admin');
 
-router.use('/admin', adminRouter);
-router.use('/contact', contactRouter);
+Router.use('/admin', AdminRouter);
+Router.use('/contact', ContactRouter);
 
-module.exports = router;
+module.exports = Router;
