@@ -4,3 +4,4 @@
 /builds
 config.js
 .atom-build.yaml
+nohup.out

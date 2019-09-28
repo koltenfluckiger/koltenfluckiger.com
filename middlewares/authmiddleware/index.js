@@ -1,7 +1,9 @@
-const checkToken = (req, res, next) => {
-  const token = req.cookies;
-  console.log(token);
-  next();
+class AuthMiddleware {
+  static async checkAuth(req, res, next) {
+    const token = req.cookies;
+    console.log(token);
+    next();
+  }
 }
 
-module.exports.AuthMiddleware = checkToken;
+module.exports = AuthMiddleware;
