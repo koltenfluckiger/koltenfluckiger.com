@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from "react";
+import PropTypes from "prop-types";
 
-import Icon from './Icon';
+import Icon from "./Icon";
 
-import './style.scss';
+import "./style.scss";
 
 class Framework extends Component {
 
@@ -24,7 +24,7 @@ class Framework extends Component {
 
   render() {
     return (
-      <div className='framework-container'>
+      <div className="framework-container">
       <Icon variant={this.variant} abbreviation={this.abbreviation} />
       <h6>{this.title}</h6>
       <ul>

@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-import Login from './Login';
-import Dashboard from './Dashboard';
+import Login from "./Login";
+import Dashboard from "./Dashboard";
 
-import {Error, PrivateRoute} from '../../Routing';
+import {Error, PrivateRoute} from "../../Routing";
 
-import './style.scss';
+import "./style.scss";
 
 class Admin extends Component {
 
@@ -15,7 +15,7 @@ class Admin extends Component {
       <Router>
       <Switch>
         <Route exact path={`${this.props.match.path}/login`} component={Login}/>
-        <PrivateRoute exact path={`${this.props.match.path}/dashboard`} component={Dashboard} redirect='/admin/login'/>
+        <Route exact path={`${this.props.match.path}/dashboard`} component={Dashboard}/>
         <Route component={Error}/>
       </Switch>
     </Router>

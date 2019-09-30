@@ -1,3 +1,3 @@
-import BrowserDetect from './browser-detect';
+import BrowserDetect from "./browser-detect";
 
 export {BrowserDetect};

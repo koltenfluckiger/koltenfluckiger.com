@@ -1,4 +1,4 @@
-const admin = new(require('../../models/admin'))('admin');
+const admin = new(require("../../models/admin"))("admin");
 admin.setup();
 
 class AdminController {
@@ -10,9 +10,9 @@ class AdminController {
       const secretKey = req.body.secretKey;
 
       const authToken = await admin.authenicate(username, password, secretKey);
-      res.cookie('token', authToken).send(200);
+      return res.cookie("token", authToken).status(200).json({success:true});
     } catch {
-      res.sendStatus(401);
+      return res.sendStatus(401);
     }
   }
 }

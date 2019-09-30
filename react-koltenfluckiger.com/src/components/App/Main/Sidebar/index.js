@@ -1,17 +1,17 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import PropTypes from "prop-types";
 
-import Avatar from './Avatar';
-import Menu from './Menu';
-import InternalLink from './InternalLink';
-import ExternalLink from './ExternalLink';
-import Divider from './Divider';
+import Avatar from "./Avatar";
+import Menu from "./Menu";
+import InternalLink from "./InternalLink";
+import ExternalLink from "./ExternalLink";
+import Divider from "./Divider";
 
-import InternalLinks from '../../../../static/links-internal-config';
-import ExternalLinks from '../../../../static/links-external-config';
+import InternalLinks from "../../../../static/links-internal-config";
+import ExternalLinks from "../../../../static/links-external-config";
 
-import './style.scss';
+import "./style.scss";
 
 class Sidebar extends Component {
 
@@ -33,13 +33,13 @@ class Sidebar extends Component {
   }
 
   render() {
-    return (<div className='sidebar-container'>
+    return (<div className="sidebar-container">
       <div className={this.state.isExtended
-          ? 'sidebar-extended'
-          : 'sidebar'}>
+          ? "sidebar-extended"
+          : "sidebar"}>
         <Avatar/>
-        <ul className='sidebar-items'>
-          <Menu variant='fas sidebar-icon fa-bars' extendSidebar={this.extendSidebar}/> {InternalLinks.map((link) => (<InternalLink key={link.key} href={link.href} variant={link.variant} title={link.title}/>))}
+        <ul className="sidebar-items">
+          <Menu variant="fas sidebar-icon fa-bars" extendSidebar={this.extendSidebar}/> {InternalLinks.map((link) => (<InternalLink key={link.key} href={link.href} variant={link.variant} title={link.title}/>))}
           <Divider/> {ExternalLinks.map((link) => (<ExternalLink key={link.key} href={link.href} variant={link.variant} title={link.title}/>))}
         </ul>
       </div>

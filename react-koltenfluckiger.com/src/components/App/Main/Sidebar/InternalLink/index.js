@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Route, NavLink} from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, {Component} from "react";
+import {BrowserRouter as Route, NavLink} from "react-router-dom";
+import PropTypes from "prop-types";
 
-import Icon from '../Icon';
+import Icon from "../Icon";
 
-import './style.scss';
+import "./style.scss";
 
 class InternalLink extends Component {
 
@@ -23,7 +23,7 @@ class InternalLink extends Component {
 
   render() {
     return (<li>
-      <NavLink exact to={this.href} className='sidebar-links' activeClassName='active'>
+      <NavLink exact to={this.href} className="sidebar-links" activeClassName="active">
           <Icon variant={this.variant}/>
       </NavLink>
     </li>)

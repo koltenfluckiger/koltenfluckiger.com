@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const config = require('../../config.js');
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const config = require("../../config.js");
 
 class Admin {
 
@@ -14,9 +14,9 @@ class Admin {
   }
 
   setup() {
-    mongoose.admin_conn = mongoose.createConnection('mongodb://localhost:27017/' + this.databaseName, this.options);
+    mongoose.admin_conn = mongoose.createConnection("mongodb://localhost:27017/" + this.databaseName, this.options);
     const adminSchema = new mongoose.Schema({_id: Number, username: String, password: String, secretKey: String})
-    this.model = mongoose.admin_conn.model('users', adminSchema);
+    this.model = mongoose.admin_conn.model("users", adminSchema);
   }
 
   async compare(password, hashPassword, secretKey, hashSecretKey) {
@@ -40,8 +40,8 @@ class Admin {
       const validCreds = await this.compare(password, user.password, secretKey, user.secretKey);
       const token = await jwt.sign({
         username: username
-      }, config.secret, {expiresIn: '24h'});
-      return Promise.resolve(JSON.stringify({success: true, message: "Authenication successful", token: token}));
+      }, config.secret, {expiresIn: "24h"});
+      return Promise.resolve(token);
     } catch (err) {
       return Promise.reject(err);
     }

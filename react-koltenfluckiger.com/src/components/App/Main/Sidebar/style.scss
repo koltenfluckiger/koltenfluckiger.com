@@ -11,18 +11,17 @@
   .sidebar {
     transition: all 0.5s ease;
     overflow: hidden;
-    width: 75px;
+    width: 0px;
     height: 100%;
     background-color: #FFF;
-    display: none;
   }
 }
 @media screen and (max-width: 640px) {
-  .sidebar-mobile-visible {
+  .sidebar-mobile-toggle-container {
     transition: all 0.5s ease;
     overflow: hidden;
-    width: 75px;
-    height: 100%;
+    width: 100%;
+    height: 75px;
     background-color: #FFF;
   }
 }

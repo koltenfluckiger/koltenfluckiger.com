@@ -1,20 +1,17 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Sidebar from './Sidebar';
+import Board from './Board';
 
-import './style.scss';
+import "./style.scss";
 
 class Dashboard extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-  async componentDidMount(){
-    
-  }
-
   render() {
-    return (
-      <h1>Dashboard</h1>
+    return (<Router>
+      <Sidebar/>
+      <Board/>
+    </Router>
     )
   }
 }

@@ -1,17 +1,17 @@
 class BrowserDetect {
 
   static isOpera() {
-    return (!!window.opr && !!window.opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    return (!!window.opr && !!window.opr.addons) || !!window.opera || navigator.userAgent.indexOf(" OPR/") >= 0;
   }
 
   static isFirefox(){
-    return typeof InstallTrigger !== 'undefined';
+    return typeof InstallTrigger !== "undefined";
   }
 
   static isSafari() {
     return /ructor/i.test(window.HTMLElement) || (function(p) {
       return p.toString() === "[object SafariRemoteNotification]";
-    })(!window.safari || (typeof window.safari !== 'undefined' && window.safari.pushNotification));
+    })(!window.safari || (typeof window.safari !== "undefined" && window.safari.pushNotification));
   }
 
   static isIE(){

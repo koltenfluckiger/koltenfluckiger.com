@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
-import Title from '../Title';
-import SearchBar from './SearchBar';
-import Project from './Project';
+import Title from "../Title";
+import SearchBar from "./SearchBar";
+import Project from "./Project";
 
-import './style.scss';
+import "./style.scss";
 
 class Projects extends Component {
 
   render() {
-    return (<div className='projects-container'>
-      <Title text='Projects'/>
+    return (<div className="projects-container">
+      <Title text="Projects"/>
       <SearchBar/>
       <Project />
     </div>)

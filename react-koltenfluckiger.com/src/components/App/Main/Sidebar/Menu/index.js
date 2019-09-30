@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from "react";
+import PropTypes from "prop-types";
 
-import Icon from '../Icon';
+import Icon from "../Icon";
 
-import './style.scss';
+import "./style.scss";
 
 class Menu extends Component {
 
@@ -21,7 +21,7 @@ class Menu extends Component {
 
   render() {
     return (<li>
-      <a onClick={this.extendSidebar} style={{cursor: 'pointer'}} className='sidebar-links'>
+      <a onClick={this.extendSidebar} style={{cursor: "pointer"}} className="sidebar-links">
           <Icon variant={this.variant}/>
       </a>
     </li>)

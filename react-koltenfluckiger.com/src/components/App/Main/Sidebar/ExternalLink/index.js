@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from "react";
+import PropTypes from "prop-types";
 
-import Icon from '../Icon';
+import Icon from "../Icon";
 
-import './style.scss';
+import "./style.scss";
 
 class ExternalItem extends Component {
 
@@ -22,7 +22,7 @@ class ExternalItem extends Component {
 
   render() {
     return (<li>
-      <a href={this.href} className='sidebar-links'>
+      <a href={this.href} className="sidebar-links">
           <Icon variant={this.variant}/>
       </a>
     </li>)

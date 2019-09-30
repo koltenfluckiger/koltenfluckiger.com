@@ -1,7 +1,7 @@
-const emailjs = require('emailjs');
-const config = require('../../config.js');
+const emailjs = require("emailjs");
+const config = require("../../config.js");
 
-var logger = require('node-logger').createLogger('/tmp/development.log');
+var logger = require("node-logger").createLogger("/tmp/development.log");
 
 class ContactController {
 
@@ -19,12 +19,12 @@ class ContactController {
       text: emailMessage,
       from: from,
       cc: from,
-      to: 'koltenfluckiger@gmail.com',
-      subject: 'Portfolio Contact Email'
+      to: "koltenfluckiger@gmail.com",
+      subject: "Portfolio Contact Email"
     }, function(err, message) {
-      res.sendStatusStatus(400);
+      return res.sendStatus(400);
     })
-    res.sendStatusStatus(200);
+    return res.send(200).json({success:true});
   }
 }
 

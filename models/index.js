@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 class Database {
 
@@ -13,51 +13,51 @@ class Database {
 
   getConnection() {
     switch (this.database) {
-      case 'admin':
+      case "admin":
         return mongoose.admin_conn;
         break;
-      case 'framework':
+      case "framework":
         return mongoose.framework_conn;
         break;
-      case 'project':
+      case "project":
         return mongoose.project_conn;
         break;
       default:
-        console.log('this.database name did not match');
+        console.log("this.database name did not match");
         break;
     }
   }
 
   setup() {
     switch (this.database) {
-      case 'admin':
-        mongoose.admin_conn = mongoose.createConnection('mongodb://localhost:27017/' + this.database, this.options);
+      case "admin":
+        mongoose.admin_conn = mongoose.createConnection("mongodb://localhost:27017/" + this.database, this.options);
         break;
-      case 'framework':
-        mongoose.framework_conn = mongoose.createConnection('mongodb://localhost:27017/' + this.database, this.options);
+      case "framework":
+        mongoose.framework_conn = mongoose.createConnection("mongodb://localhost:27017/" + this.database, this.options);
         break;
-      case 'project':
-        mongoose.project_conn = mongoose.createConnection('mongodb://localhost:27017/' + this.database, this.options);
+      case "project":
+        mongoose.project_conn = mongoose.createConnection("mongodb://localhost:27017/" + this.database, this.options);
         break;
       default:
-        console.log('this.database name did not match');
+        console.log("this.database name did not match");
         break;
     }
   }
 
   disconnect() {
     switch (this.database) {
-      case 'admin':
+      case "admin":
         mongoose.admin_conn.close();
         break;
-      case 'framework':
+      case "framework":
         mongoose.framework_conn.close();
         break;
-      case 'project':
+      case "project":
         mongoose.project_conn.close();
         break;
       default:
-        console.log('Database name did not match');
+        console.log("Database name did not match");
         break;
     }
   }

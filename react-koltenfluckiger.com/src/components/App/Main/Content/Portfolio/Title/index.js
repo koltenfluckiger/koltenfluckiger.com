@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
-import './style.scss';
+import "./style.scss";
 
 class Title extends Component {
 
@@ -11,7 +11,7 @@ class Title extends Component {
 
   render() {
     return (
-      <div className='title-container'>
+      <div className="title-container">
       <h2>{this.text}</h2>
   </div>
     )

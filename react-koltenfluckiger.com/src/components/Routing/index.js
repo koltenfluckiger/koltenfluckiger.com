@@ -1,5 +1,5 @@
-import Error from './Error';
-import PrivateRoute from './PrivateRoute';
+import Error from "./Error";
+import PrivateRoute from "./PrivateRoute";
 
 export {
    Error,

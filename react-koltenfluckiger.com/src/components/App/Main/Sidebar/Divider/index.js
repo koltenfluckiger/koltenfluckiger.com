@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
-import Icon from '../Icon';
+import Icon from "../Icon";
 
 class Divider extends Component {
 
   render() {
     return (
-      <div className='sidebar-links'>
-      <Icon variant='fas fa-minus divider' />
+      <div className="sidebar-links">
+      <Icon variant="fas fa-minus divider" />
     </div>
     )
   }

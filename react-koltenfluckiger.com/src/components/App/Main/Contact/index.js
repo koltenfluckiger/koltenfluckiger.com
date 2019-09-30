@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-import {BrowserDetect} from '../../../../utils';
+import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+import {BrowserDetect} from "../../../../utils";
+import ApiHandler from '../../../../utils/apihandler';
 
-import './style.scss';
+import "./style.scss";
 
 class Contact extends Component {
 
@@ -20,11 +21,11 @@ class Contact extends Component {
 
   validateFormInput(e) {
     switch (e.target.name) {
-      case 'email':
+      case "email":
         const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
         this.setState({emailIsValid: emailIsValid});
         break;
-      case 'name':
+      case "name":
         const nameIsValid = /^[a-zA-Z]+$/.test(e.target.value);
         this.setState({nameIsValid: nameIsValid});
         break;
@@ -41,15 +42,13 @@ class Contact extends Component {
     const message = e.target.message.value;
 
     try {
-      const response = await fetch('/contact/email/send', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name: name, email: email, message: message})
-      })
-      if (response.ok) {
+      const response = await ApiHandler.post('/contact/email/send', {
+        name: name,
+        email: email,
+        message: message
+      });
+
+      if (response.data.success) {
         this.setState({success: true});
         setTimeout(() => {
           this.props.history.push("/");
@@ -63,26 +62,26 @@ class Contact extends Component {
   }
 
   render() {
-    return (<div className='contact-container'>
-      <div className='contact-card'>
-        <div className='contact-link-container'>
-          <a href='/' className='back-button'>
-            <i className='fas fa-arrow-left'></i>
+    return (<div className="contact-container">
+      <div className="contact-card">
+        <div className="contact-link-container">
+          <a href="/" className="back-button">
+            <i className="fas fa-arrow-left"></i>
           </a>
         </div>
-        <div className='contact-card-content'>
-          <h2>Let's get in touch!</h2>
+        <div className="contact-card-content">
+          <h2>Let"s get in touch!</h2>
           <h6>Send me a message with any inquires you may have.</h6>
         </div>
-        <div className='contact-form-container'>
-          <form id='email-form' onSubmit={this.handleSubmit} method='post' encType='application/x-www-form-urlencoded'>
+        <div className="contact-form-container">
+          <form id="email-form" onSubmit={this.handleSubmit} method="post" encType="application/x-www-form-urlencoded">
             <div>
-              <label className='field-label'>Name:</label>
-              <div className='contact-input-container'>
-                <input onBlur={this.validateFormInput} type='text' name='name' className='contact-field-input' autoComplete='off' required="required"></input>
+              <label className="field-label">Name:</label>
+              <div className="contact-input-container">
+                <input onBlur={this.validateFormInput} type="text" name="name" className="contact-field-input" autoComplete="off" required="required"></input>
                 {
                   (!this.state.nameIsValid)
-                    ? <div className='error-input-container error'>
+                    ? <div className="error-input-container error">
                         Please check that the name contains no numbers and try again.
                       </div>
                     : <></>
@@ -90,12 +89,12 @@ class Contact extends Component {
               </div>
             </div>
             <div>
-              <label className='field-label'>Email:</label>
-              <div className='contact-input-container'>
-                <input onBlur={this.validateFormInput} type='email' name='email' className='contact-field-input' autoComplete='off' required="required"></input>
+              <label className="field-label">Email:</label>
+              <div className="contact-input-container">
+                <input onBlur={this.validateFormInput} type="email" name="email" className="contact-field-input" autoComplete="off" required="required"></input>
                 {
                   (!this.state.emailIsValid)
-                    ? <div className='error-input-container error'>
+                    ? <div className="error-input-container error">
                         Please check that the email is valid and try again.
                       </div>
                     : <></>
@@ -103,20 +102,20 @@ class Contact extends Component {
               </div>
             </div>
             <div>
-              <label className='field-label'>Message:</label>
-              <div className='contact-input-container'>
-                <textarea name='message' rows='5' className='contact-message-field' autoComplete='off' maxLength="300" required="required"></textarea>
+              <label className="field-label">Message:</label>
+              <div className="contact-input-container">
+                <textarea name="message" rows="5" className="contact-message-field" autoComplete="off" maxLength="300" required="required"></textarea>
               </div>
             </div>
-            <div className='buttons-container'>
-              <button type='submit' className='button green'>Send Message</button>
-              <a href='mailto:koltenfluckiger@gmail.com' className='button blue'>Email Directly</a>
+            <div className="buttons-container">
+              <button type="submit" className="button green">Send Message</button>
+              <a href="mailto:koltenfluckiger@gmail.com" className="button blue">Email Directly</a>
             </div>
           </form>
           <div>
             {
               this.state.success
-                ? <div className='status-container show success'>
+                ? <div className="status-container show success">
                     <i className="fa fa-check status-icon"></i>
                     Your message was sent successfully!
                   </div>
@@ -124,7 +123,7 @@ class Contact extends Component {
             }
             {
               this.state.error
-                ? <div className='status-container show error'>
+                ? <div className="status-container show error">
                     <i className="fa fa-times-circle status-icon"></i>
                     Your messsage was not sent successfully. Please try again later.
                   </div>
