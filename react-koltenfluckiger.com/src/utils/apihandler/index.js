@@ -32,7 +32,6 @@ class ApiHandler {
   }
 
   static async post(url, data) {
-    const payload = JSON.stringify(data);
     try {
       const results = await axios.post(url, data);
       return Promise.resolve(results);
@@ -42,11 +41,8 @@ class ApiHandler {
   }
 
   static async patch(url, data) {
-    const payload = JSON.stringify(data);
     try {
-      const results = await axios.patch(url, {
-        data: data
-      }, {headers: this.headers});
+      const results = await axios.patch(url, data);
       return Promise.resolve(results);
     } catch (err) {
       return Promise.reject(err);
@@ -54,11 +50,8 @@ class ApiHandler {
   }
 
   static async delete(url, data) {
-    const payload = JSON.stringify(data);
     try {
-      const results = await axios.delete(url, {
-        data: data
-      }, {headers: this.headers});
+      const results = await axios.delete(url, data);
       return Promise.resolve(results);
     } catch (err) {
       return Promise.reject(err);

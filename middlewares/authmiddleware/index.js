@@ -3,7 +3,6 @@ const config = require("../../config");
 
 class AuthMiddleware {
   static async checkAuth(req, res, next) {
-
     const token = req.cookies.token;
 
     if (!token) {

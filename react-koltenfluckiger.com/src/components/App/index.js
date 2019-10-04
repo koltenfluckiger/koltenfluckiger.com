@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-import Main from "./Main";
-import Admin from "./Admin";
+import Main from "../Main";
+import Admin from "../Admin";
 import Error from "../Routing/Error";
 
 import "./style.scss";
