@@ -22,10 +22,11 @@ class Project extends Component {
     this.screenshotIconRef = props.screenshotIconRef
     this.frameworks = props.frameworks;
     this.date = props.date;
+    this.id = props.id;
   }
 
   render() {
-    return (<Link to={`/projects/${this.id}`}>
+    return (<Link to={`/`}>
       <div className="project-container">
         <img alt={this.title} src={this.screenshotIconRef} className="project-screenshot-icon"/>
         <div className="project-details-container">

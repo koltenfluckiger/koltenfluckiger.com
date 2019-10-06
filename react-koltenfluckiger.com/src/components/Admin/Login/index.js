@@ -27,7 +27,7 @@ class Login extends Component {
         username: username,
         password: password,
         secretKey: secretKey
-      });
+      }, "json");
 
       if (response.data.success) {
         this.props.history.push('/admin/dashboard');

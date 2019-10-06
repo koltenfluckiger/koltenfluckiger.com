@@ -18,21 +18,26 @@
     max-width: 540px;
   }
 }
+@media screen and (min-width: 641px){
+  .admin-projects-list-form-container  {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 
 .admin-dashboard-projects-container {
   width: 100%;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-top: 22.5px;
   padding-right: 15px;
   padding-left: 15px;
 }
 
-.admin-projects-list-form-container {
-  display: flex;
-  display: -ms-flexbox;
-  margin-right: auto;
-  margin-left: auto;
-}
+
 
 .admin-projects-list-container {
   display: flex;

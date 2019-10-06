@@ -1,7 +1,7 @@
 const Express = require("express");
 const Router = Express.Router();
 const BodyParser = require("body-parser");
-const ContactController = new(require("../../controllers/contactcontroller"))();
+const ContactController = require("../../controllers/contactcontroller");
 
 Router.use(BodyParser.json());
 

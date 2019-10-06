@@ -45,7 +45,7 @@ class Contact extends Component {
         name: name,
         email: email,
         message: message
-      });
+      }, "json");
 
       if (response.data.success) {
         this.setState({success: true});
@@ -57,6 +57,9 @@ class Contact extends Component {
       }
     } catch  {
       this.setState({error: true});
+      setTimeout(() => {
+        this.props.history.push("/");
+      }, 4000);
     }
   }
 

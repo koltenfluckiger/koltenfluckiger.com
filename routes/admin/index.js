@@ -2,8 +2,8 @@ const Express = require("express");
 const Router = Express.Router();
 const BodyParser = require("body-parser");
 const CookieParser = require("cookie-parser");
-const AuthMiddleware = require("../../middlewares");
-const AdminController = new(require("../../controllers/admincontroller"))();
+const {AuthMiddleware} = require("../../middlewares");
+const {AdminController} = require("../../controllers");
 
 // ADMIN MIDDLEWARES
 
