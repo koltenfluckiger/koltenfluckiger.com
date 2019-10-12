@@ -12,7 +12,7 @@ class Project extends Component {
     screenshotIconRef: PropTypes.string,
     frameworks: PropTypes.array,
     date: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.string,
     deleteProject: PropTypes.func
   }
 
@@ -40,10 +40,10 @@ class Project extends Component {
           <p className="admin-project-date">{this.date}</p>
         </div>
         <div className='admin-project-edit-options-container'>
-          <Link to={`${this.props.match.path}/${this.id}`}>
+          <Link to={`${this.props.match.path}/${this.title}`}>
             <i className="fas fa-pen-square"></i>
           </Link>
-          <i onClick={this.deleteProject} className="fas fa-fw fa-times"></i>
+          <i onClick={() => this.deleteProject(this.id)} className="fas fa-fw fa-times"></i>
         </div>
       </div>
     </li>)

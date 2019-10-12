@@ -8,7 +8,7 @@ class ApiHandler {
       "Content-Type": "application/json"
     },
     multiForm: {
-      "Content-Type": "multipart/form-data",
+      "Content-Type": "multipart/form-payload",
       "Accept": "application/json"
     }
   }
@@ -37,30 +37,30 @@ class ApiHandler {
     }
   }
 
-  static async post(url, data, formType) {
+  static async post(url, payload, formType) {
     const headers = this.headers[formType];
     try {
-      const results = await axios.post(url, data, {headers: headers});
+      const results = await axios.post(url, payload, {headers: headers});
       return Promise.resolve(results);
     } catch (err) {
       return Promise.reject(err);
     }
   }
 
-  static async patch(url, data, formType) {
+  static async patch(url, payload, formType) {
     const headers = this.headers[formType];
     try {
-      const results = await axios.patch(url, data, {headers: headers});
+      const results = await axios.patch(url, payload, {headers: headers});
       return Promise.resolve(results);
     } catch (err) {
       return Promise.reject(err);
     }
   }
 
-  static async delete(url, data, formType) {
-    const headers = this.headers[formType];
+  static async delete(url, payload) {
+    const headers = this.headers.json;
     try {
-      const results = await axios.delete(url, data, {headers: headers});
+      const results = await axios.delete(url, payload, {headers: headers});
       return Promise.resolve(results);
     } catch (err) {
       return Promise.reject(err);

@@ -8,13 +8,13 @@ class AuthMiddleware {
   async checkAuth(req, res, next) {
     const token = req.cookies.token;
     if (!token) {
-      return res.redirect("/");
+      return res.status(401).redirect("/");
     }
     try {
       await jwt.verify(token, config.secret);
       next();
     } catch  {
-      return res.redirect("/");
+      return res.status(401).redirect("/");
     }
   }
 }

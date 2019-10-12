@@ -8,6 +8,7 @@ class ProjectService {
   async createProject(payload) {
 
     try {
+      payload._id = new mongoose.Types.ObjectId;
       const project = new Project(payload);
       const status = await Database.create(project);
       return Promise.resolve(status);

@@ -9,11 +9,11 @@ const Routes = require("./routes");
 
 App.use("/", Routes);
 
-// App.use(Express.static(projectPath));
-//
-// App.get("/*", (req, res) => {
-//   return res.sendFile(projectPath + "/index.html");
-// });
+App.use(Express.static(projectPath));
+
+App.get("/*", (req, res) => {
+  return res.sendFile(projectPath + "/index.html");
+});
 
 // START SERVER
 App.listen(3001);

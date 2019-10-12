@@ -10,45 +10,47 @@ class Projects extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {}
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.state = {
+      loading: true
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  deleteProject(project) {
-    prompt('Are you sure you want to delete this project?');
-  }
-
-  handleInputChange(e) {
-    const target = e.target;
-    const value = target.type === 'file'
-      ? target.files
-      : target.value;
-    const name = target.name;
-    this.setState({
-      [name]: {
-        type: target.type,
-        value: value
-      }
-    });
+  async deleteProject(id) {
+    console.log(id);
+    try {
+    await ApiHandler.delete("/projects", {params: {id: id}});
+    this.props.history.push(this.props.location.pathname);
+  } catch(err) {
+    console.log(err);
+    }
   }
 
   async handleSubmit(e) {
     e.preventDefault();
-    var newForm = new FormData();
+
     const myForm = document.getElementById('new-project-form');
     const formData = new FormData(myForm);
-    for (var pair of formData.entries()){
-      console.log(pair);
-    }
-
 
     try {
-      await ApiHandler.post("/projects", formData, "multiForm");
+      const results = await ApiHandler.post("/projects", formData, "multiForm");
+      if (results.status === 200){
+        console.log("HERE");
+        console.log(this.props.location.pathname);
+        this.props.history.push(this.props.location.pathname);
+      }
     } catch (err) {
       console.log(err);
     }
+  }
 
+async componentDidMount(){
+    try {
+    const projects = await ApiHandler.get('/projects', "json");
+    this.setState({loading: false, projects: projects.data});
+  } catch(err) {
+    console.log(err);
+    }
   }
 
   render() {
@@ -60,7 +62,9 @@ class Projects extends Component {
           </div>
           <div className='admin-project-list'>
             <ul>
-              <Project title='This Portfolio' screenshotIconRef='/images/portfolio-screenshot.png' frameworks={['HTML', 'CSS', 'Javascript', 'React']} date="Sept 18th 2019" id={1} deleteProject={this.deleteProject}/>
+              {this.state.loading ? "" : this.state.projects.map(project => (
+                <Project key={project.title} title={project.title} screenshotIconRef={project.images.iconURL} frameworks={project.frameworks} date={project.date} id={project._id} deleteProject={this.deleteProject}/>
+              ))}
             </ul>
           </div>
         </div>
@@ -71,27 +75,26 @@ class Projects extends Component {
           <div className='admin-new-project-form-container'>
             <form id="new-project-form" onSubmit={this.handleSubmit} method="post" encType="multipart/form-data">
               <div className='admin-form-group'>
-                <input className='form-control' name="title" autoComplete='off' type='text' onChange={this.handleInputChange} placeholder='Title'/>
-                <input className='form-control' name="skills" autoComplete='off' type='text' onChange={this.handleInputChange} placeholder='Skills'/>
+                <input className='form-control' required="required" name="title" autoComplete='off' type='text'  placeholder='Title'/>
+                <input className='form-control' required="required" name="skills[]" autoComplete='off' type='text'  placeholder='Skills'/>
               </div>
               <div className='admin-form-group'>
-                <textarea className='form-control' name="description" type='text' onChange={this.handleInputChange} placeholder='Description'/>
+                <textarea className='form-control' required="required" name="description" type='text'  placeholder='Description'/>
               </div>
               <div className='admin-form-group'>
-                <input className='form-control' name="date" autoComplete='off' type='date' onChange={this.handleInputChange} placeholder='Date'/>
-                <input className='form-control' name="sourceCodeLink" autoComplete='off' type='text' onChange={this.handleInputChange} placeholder='Source Code Link'/>
+                <input className='form-control' required="required" name="sourceCodeLink" autoComplete='off' type='text'  placeholder='Source Code Link'/>
               </div>
               <div className='admin-form-group'>
-                <input className='form-control' name="hostedLink" autoComplete='off' type='text' onChange={this.handleInputChange} placeholder='Hosted Link'/>
-                <input className='form-control' name="hostedStatus" autoComplete='off' type='text' onChange={this.handleInputChange} placeholder="Currently Live"/>
+                <input className='form-control' required="required" name="hostedLink" autoComplete='off' type='text'  placeholder='Hosted Link'/>
+                <input className='form-control' required="required" name="hostedStatus" autoComplete='off' type='text'  placeholder="Currently Live"/>
               </div>
               <div className='admin-form-group'>
-                <input className='form-control' name="searchTags" autoComplete='off' type='text' onChange={this.handleInputChange} placeholder='Search Tags'/>
+                <input className='form-control' required="required" name="searchTags" autoComplete='off' type='text'  placeholder='Search Tags'/>
               </div>
               <div className='admin-form-group'>
-                <input type="file" id="icon" name="icon" accept="image/*" onChange={this.handleInputChange}/>
+                <input type="file" id="icon" required="required" name="icon" accept="image/*" />
                 <label className='form-control' htmlFor="icon">Choose an icon...</label>
-                <input type="file" id="media" multiple="multiple" name="mediaFiles" accept="image/*" onChange={this.handleInputChange}/>
+                <input type="file" id="media" multiple="multiple" required="required" name="mediaFiles" accept="image/*" />
                 <label className='form-control' multiple="multiple" htmlFor="media">Choose media...</label>
               </div>
               <div className='admin-form-group'>
