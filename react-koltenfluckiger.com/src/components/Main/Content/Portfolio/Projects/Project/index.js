@@ -10,7 +10,7 @@ class Project extends Component {
     href: PropTypes.string,
     title: PropTypes.string,
     screenshotIconRef: PropTypes.string,
-    frameworks: PropTypes.array,
+    skills: PropTypes.array,
     date: PropTypes.string,
     id: PropTypes.number
   }
@@ -20,7 +20,7 @@ class Project extends Component {
     this.href = props.href;
     this.title = props.title;
     this.screenshotIconRef = props.screenshotIconRef
-    this.frameworks = props.frameworks;
+    this.skills = props.skills;
     this.date = props.date;
     this.id = props.id;
   }
@@ -31,10 +31,10 @@ class Project extends Component {
         <img alt={this.title} src={this.screenshotIconRef} className="project-screenshot-icon"/>
         <div className="project-details-container">
           <h5 className="project-title">{this.title}</h5>
-          <div className="project-frameworks">
+          <div className="project-skills">
             <p>{
-                this.frameworks.map(framework => {
-                  return " " + framework + " "
+                this.skills.map(skill => {
+                  return " " + skill + " "
               })
             }</p>
           </div>

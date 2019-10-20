@@ -1,19 +1,25 @@
 const express = require('express');
-const multer  = require('multer');
+const multer = require('multer');
 const fs = require('fs');
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    console.log(file);
-    if(!fs.existsSync(global.appRoot + "/react-koltenfluckiger.com/public/images/" + req.body.title)){
-      fs.mkdirSync(global.appRoot + "/react-koltenfluckiger.com/public/images/" + req.body.title);
-    }
-    cb(null, global.appRoot + "/react-koltenfluckiger.com/public/images/" + req.body.title);
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname)
-  }
-})
-const upload = multer({ storage: storage });
+class FileMiddleware {
 
-module.exports = upload;
+  constructor(){
+    this.storage = multer.diskStorage({
+      destination: function(req, file, cb) {
+        const projectName = req.body.title;
+        const folderName = projectName.replace(/[(^\s$)]/g, "");
+        if (!fs.existsSync(global.projectPath + "images/" + folderName)) {
+          fs.mkdirSync(global.projectPath + "images/" + folderName);
+        }
+        cb(null, global.projectPath + folderName);
+      },
+      filename: function(req, file, cb) {
+        cb(null, file.originalname)
+      }
+    })
+    this.upload = multer({storage: this.storage});
+  }
+}
+
+module.exports = new FileMiddleware();

@@ -10,7 +10,7 @@ class Project extends Component {
   static propTypes = {
     title: PropTypes.string,
     screenshotIconRef: PropTypes.string,
-    frameworks: PropTypes.array,
+    skills: PropTypes.array,
     date: PropTypes.string,
     id: PropTypes.string,
     deleteProject: PropTypes.func
@@ -20,7 +20,7 @@ class Project extends Component {
     super(props);
     this.title = props.title;
     this.screenshotIconRef = props.screenshotIconRef
-    this.frameworks = props.frameworks;
+    this.skills = props.skills;
     this.date = props.date;
     this.id = props.id;
     this.deleteProject = props.deleteProject.bind(this);
@@ -32,8 +32,8 @@ class Project extends Component {
         <img alt={this.title} src={this.screenshotIconRef} className="admin-project-screenshot-icon"/>
         <div className="admin-project-details-container">
           <h5 className="admin-project-title">{this.title}</h5>
-          <div className="admin-project-frameworks">
-            <p>{this.frameworks}</p>
+          <div className="admin-project-skills">
+            <p>{this.skills}</p>
           </div>
         </div>
         <div className="admin-project-date-container">

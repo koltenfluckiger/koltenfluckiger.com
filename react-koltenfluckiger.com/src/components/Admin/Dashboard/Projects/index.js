@@ -17,7 +17,6 @@ class Projects extends Component {
   }
 
   async deleteProject(id) {
-    console.log(id);
     try {
     await ApiHandler.delete("/projects", {params: {id: id}});
     this.props.history.push(this.props.location.pathname);
@@ -35,8 +34,6 @@ class Projects extends Component {
     try {
       const results = await ApiHandler.post("/projects", formData, "multiForm");
       if (results.status === 200){
-        console.log("HERE");
-        console.log(this.props.location.pathname);
         this.props.history.push(this.props.location.pathname);
       }
     } catch (err) {
@@ -63,7 +60,7 @@ async componentDidMount(){
           <div className='admin-project-list'>
             <ul>
               {this.state.loading ? "" : this.state.projects.map(project => (
-                <Project key={project.title} title={project.title} screenshotIconRef={project.images.iconURL} frameworks={project.frameworks} date={project.date} id={project._id} deleteProject={this.deleteProject}/>
+                <Project key={project.title} title={project.title} screenshotIconRef={project.images.iconURL} skills={project.skills} date={project.date} id={project._id} deleteProject={this.deleteProject}/>
               ))}
             </ul>
           </div>

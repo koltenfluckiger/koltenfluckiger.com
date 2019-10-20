@@ -12,7 +12,7 @@ class Projects extends Component {
     return (<div className="projects-container">
       <Title text="Projects"/>
       <SearchBar/>
-      <Project title='This Portfolio' screenshotIconRef='/images/portfolio-screenshot.png' frameworks={['HTML', 'CSS', 'Javascript', 'React']} date="Sept 18th 2019" id={1}/>
+      <Project title='This Portfolio' screenshotIconRef='/images/portfolio-screenshot.png' skills={['HTML', 'CSS', 'Javascript', 'React']} date="Sept 18th 2019" id={1}/>
     </div>)
   }
 }

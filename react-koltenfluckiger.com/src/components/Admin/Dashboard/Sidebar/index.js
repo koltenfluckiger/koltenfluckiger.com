@@ -11,7 +11,7 @@ class Sidebar extends Component {
     return (<div className='admin-sidebar'>
       <ul>
         <InternalLink href='/admin/dashboard/projects' variant='sidebar-icon fas fa-project-diagram'/>
-        <InternalLink href='/admin/dashboard/frameworks' variant='sidebar-icon fas fa-box-open'/>
+        <InternalLink href='/admin/dashboard/skills' variant='sidebar-icon fas fa-box-open'/>
       </ul>
     </div>)
   }

@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import PropTypes from 'prop-types';
 
 import Projects from '../Projects';
-import Frameworks from '../Frameworks';
+import Skills from '../Skills';
 
 import './style.scss';
 
@@ -15,7 +15,7 @@ class Board extends Component {
 
         <Switch>
         <Route exact path='/admin/dashboard/projects' component={Projects}/>
-        <Route exact path='/admin/dashboard/frameworks' component={Frameworks}/>
+        <Route exact path='/admin/dashboard/skills' component={Skills}/>
       </Switch>
     )
   }

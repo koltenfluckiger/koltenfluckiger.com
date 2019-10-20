@@ -7,8 +7,10 @@ mongoose.skills_conn = mongoose.createConnection("mongodb://localhost:27017/skil
 
 const skillSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  parentSkill: mongoose.Schema.Types.ObjectId,
   title: String,
+  subskills: [String],
+  abbreviation: String,
+  searchTags: [String]
 });
 
-module.exports = mongoose.skills_conn.model("childModel", skillSchema);
+module.exports = mongoose.skills_conn.model("model", skillSchema);

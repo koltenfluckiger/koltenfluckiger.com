@@ -20,7 +20,6 @@ class Login extends Component {
     const username = e.target.username.value;
     const password = e.target.password.value;
     const secretKey = e.target.secretKey.value;
-    const rememberMe = e.target.rememberMe.checked;
 
     try {
       const response = await ApiHandler.post('/admin/login', {
@@ -61,10 +60,6 @@ class Login extends Component {
               <div className="group">
                 <label htmlFor="secretKey" className="login-label">Secret Key</label>
                 <input id="secretKey" type="password" className="input" name="secretKey"/>
-              </div>
-              <div className="group">
-                <input id="check" type="checkbox" className="check" name="rememberMe"/>
-                <label htmlFor="check">Keep me Signed in</label>
               </div>
               <div className="group">
                 <input type="submit" className="button" value="Sign In"/>

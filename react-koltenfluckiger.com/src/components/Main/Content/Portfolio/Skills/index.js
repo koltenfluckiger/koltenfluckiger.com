@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 
 import Title from "../Title";
-import Framework from "./Framework";
+import Skill from "./Skill";
 
-import Frameworks from "./config"
+import Skillss from "./config"
 
 import "./style.scss";
 
@@ -16,9 +16,9 @@ class Skills extends Component {
         <div className="skills-card-subtitle-container">
           <h6>Click to see the corresponding projects</h6>
         </div>
-        <div className="skills-framework-container">
-          {Frameworks.map((framework) => (
-            <Framework key={framework.key} title={framework.title} subframeworks={framework.subframeworks} variant={framework.variant} abbreviation={framework.abbreviation} />
+        <div className="skills-skill-container">
+          {Skillss.map((skill) => (
+            <Skill key={skill.key} title={skill.title} subskills={skill.subskills} variant={skill.variant} abbreviation={skill.abbreviation} />
           ))}
         </div>
       </div>

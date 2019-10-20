@@ -7,7 +7,7 @@ const {FileMiddleware} = require("../../middlewares");
 const {ProjectsController} = require("../../controllers");
 Router.use(CookieParser());
 
-Router.post("/", AuthMiddleware.checkAuth, FileMiddleware.fields([{ name: 'icon'}, { name: 'mediaFiles'}]), ProjectsController.new);
+Router.post("/", AuthMiddleware.checkAuth, FileMiddleware.upload.fields([{ name: 'icon'}, { name: 'mediaFiles'}]), ProjectsController.new);
 Router.put("/:id", AuthMiddleware.checkAuth,ProjectsController.editById);
 Router.delete("/", AuthMiddleware.checkAuth,ProjectsController.removeById);
 

@@ -16,17 +16,6 @@ class SkillService {
       return Promise.reject(err);
     }
   }
-  async createParentSkill(payload) {
-
-    try {
-      const skill = new Skill(payload);
-      const status = await Database.create(skill);
-      return Promise.resolve(status);
-    } catch (err) {
-      logger.info(err);
-      return Promise.reject(err);
-    }
-  }
 
   async updateSkill(payload, queryParams) {
     try {
@@ -61,22 +50,13 @@ class SkillService {
   async findSkills(queryParams) {
     try {
       const skills = await Database.findAll(Skill, queryParams);
-      return Promise.resolve(projects);
+      return Promise.resolve(skills);
     } catch (err) {
       logger.info(err);
       return Promise.reject(err);
     }
   }
 
-  async deleteSkill(queryParams) {
-    try {
-      const status = await Database.deleteOne(Skill, queryParams);
-      return Promise.resolve(status);
-    } catch (err) {
-      logger.info(err);
-      return Promise.reject(err);
-    }
-  }
   async deleteSkill(queryParams) {
     try {
       const status = await Database.deleteOne(Skill, queryParams);
