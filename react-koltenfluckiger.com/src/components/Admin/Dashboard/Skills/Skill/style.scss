@@ -1,27 +1,7 @@
-.skill-container {
-text-align: center;
-line-height: 1.3em;
-padding: 5px 0;
-flex-basis: 33.3%;
-cursor: pointer;
+.skill-subskill-ul-container {
+  margin: 10px;
 }
 
-.skill-circle {
-border-radius: 50%;
-width: 50px;
-height: 50px;
-margin: 0 auto;
-display: grid;
-place-items: center;
-transition: all 0.25s ease;
-border: 5px solid transparent;
-}
-
-.admin-project-edit-options-container i {
-  padding: 5px;
-  font-size: 20px;
-}
-.admin-project-edit-options-container:last-child {
-  color: #D8000C;
-  cursor: pointer;
+.skill-subskill-li-container {
+  padding: 10px;
 }

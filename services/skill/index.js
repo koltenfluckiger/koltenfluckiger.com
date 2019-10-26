@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
-const {Database} = require("../../models");
-const {Skill} = require("../../models");
 const logger = require('node-logger').createLogger('/tmp/development.log');
+
+const {Database, Skill} = require("../../models");
 
 class SkillService {
 
-  async createSkill(payload) {
-
+  async create(payload) {
     try {
       const skill = new Skill(payload);
       const status = await Database.create(skill);
@@ -17,7 +16,7 @@ class SkillService {
     }
   }
 
-  async updateSkill(payload, queryParams) {
+  async update(payload, queryParams) {
     try {
       const status = await Database.updateOne(Skill, payload, queryParams);
       return Promise.resolve(status);
@@ -27,7 +26,7 @@ class SkillService {
     }
   }
 
-  async updateSkills(payload,queryParams) {
+  async updateMany(payload, queryParams) {
     try {
       const status = await Database.updateMany(Skill, payload, queryParams);
       return Promise.resolve(status);
@@ -37,17 +36,17 @@ class SkillService {
     }
   }
 
-  async findSkill(queryParams) {
+  async find(queryParams) {
     try {
-      const skill = await Database.findOne(Skill, queryParams);
-      return Promise.resolve(skill);
+      const skills = await Database.findOne(Skill, queryParams);
+      return Promise.resolve(skills);
     } catch (err) {
       logger.info(err);
       return Promise.reject(err);
     }
   }
 
-  async findSkills(queryParams) {
+  async findAll(queryParams) {
     try {
       const skills = await Database.findAll(Skill, queryParams);
       return Promise.resolve(skills);
@@ -57,7 +56,17 @@ class SkillService {
     }
   }
 
-  async deleteSkill(queryParams) {
+  async findAllAndPopulate(queryParams) {
+    try {
+      const skills = await Database.findAllAndPopulate(Skill, queryParams);
+      return Promise.resolve(skills);
+    } catch (err) {
+      logger.info(err);
+      return Promise.reject(err);
+    }
+  }
+
+  async delete(queryParams) {
     try {
       const status = await Database.deleteOne(Skill, queryParams);
       return Promise.resolve(status);
@@ -66,6 +75,17 @@ class SkillService {
       return Promise.reject(err);
     }
   }
+
+  async deleteMany(queryParams) {
+    try {
+      const status = await Database.deleteMany(Skill, queryParams);
+      return Promise.resolve(status);
+    } catch (err) {
+      logger.info(err);
+      return Promise.reject(err);
+    }
+  }
+
 }
 
 module.exports = new SkillService();

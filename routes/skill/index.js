@@ -8,11 +8,10 @@ const {SkillController} = require("../../controllers");
 Router.use(BodyParser.json());
 Router.use(CookieParser());
 
-Router.post("/", AuthMiddleware.checkAuth, SkillController.new);
-Router.put("/:id", AuthMiddleware.checkAuth, SkillController.editById);
-Router.delete("/:id", AuthMiddleware.checkAuth, SkillController.removeById);
+Router.post("/", AuthMiddleware.checkAuth, SkillController.create);
+Router.put("/", AuthMiddleware.checkAuth,SkillController.editByQuery);
+Router.delete("/", AuthMiddleware.checkAuth,SkillController.removeByQuery);
 
-Router.get("/", AuthMiddleware.checkAuth, SkillController.getAll);
-Router.get("/:id", AuthMiddleware.checkAuth, SkillController.getById);
+Router.get("/", SkillController.getByQuery);
 
 module.exports = Router;

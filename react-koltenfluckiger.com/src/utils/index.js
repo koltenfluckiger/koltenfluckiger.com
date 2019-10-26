@@ -1,3 +1,4 @@
+import ApiHandler from './api-handler';
 import BrowserDetect from "./browser-detect";
 
-export {BrowserDetect};
+export {ApiHandler, BrowserDetect};

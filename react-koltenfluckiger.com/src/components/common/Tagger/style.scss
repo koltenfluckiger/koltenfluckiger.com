@@ -1,0 +1,29 @@
+.tagger-container {
+  display: block;
+}
+.tagger-tags-container {
+  color: white;
+  display: inline-block;
+}
+.x-button {
+  margin: 5px;
+  font-size:11px;
+  color: #F95E7A;
+  cursor: pointer;
+}
+
+.tagger-tag {
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 10px;
+  transition: .13s ease-out;
+  background-color: #4c87fc;
+}
+
+.tagger-input {
+  outline: none;
+  border: none;
+}

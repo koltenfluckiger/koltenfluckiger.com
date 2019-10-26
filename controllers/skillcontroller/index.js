@@ -1,23 +1,14 @@
-const {SkillService} = require('../../services');
+const {SkillService, SubSkillService, DatabaseService} = require('../../services');
 
 class SkillController {
 
-  async new(req, res) {
-    const title = req.body.title;
-    const subSkills = req.body.subSkills;
-    const abbreviation = req.body.abbreviation;
-    const searchTags = req.body.searchTags;
+  async create(req, res) {
 
-    const payload = {
-      _id: null,
-      title: title,
-      subSkills: subSkills,
-      abbreviation: abbreviation,
-      searchTags: searchTags
-    };
+    const dataParserService = new DataParserService();
+    const payload = await dataParserService.parseSkill(req.body);
 
     try {
-      await SkillService.createSkill(payload);
+      await SkillService.create(payload);
       return res.sendStatus(200);
     } catch (err) {
       console.log(err);
@@ -25,22 +16,14 @@ class SkillController {
     }
   }
 
-  async editById(req, res) {
-    const id = req.query.id;
-    const title = req.body.title;
-    const subskills = req.body.subskills;
-    const abbreviation = req.body.abbreviation;
-    const searchTags = req.body.searchTags;
+  async editByQuery(req, res) {
 
-    const payload = {
-      title: title,
-      subskills: subskills,
-      abbreviation: abbreviation,
-      searchTags: searchTags
-    };
-
+    const dataParserService = new DataParserService();
+    const payload = await dataParserService.parseSkill(req.body);
+    const query = req.query;
+    
     try {
-      await SkillService.createSkill(payload);
+      await SkillService.update(payload, query);
       return res.sendStatus(200);
     } catch (err) {
       console.log(err);
@@ -48,31 +31,21 @@ class SkillController {
     }
   }
 
-async removeById(req, res) {
-  try {
-    const id = req.query.id;
-    await SkillService.deleteSkill({_id: id});
-    return res.sendStatus(200);
-  } catch (err) {
-    console.log(err);
-    return res.sendStatus(404);
-  }
-}
-
-  async getAll(req, res) {
+  async removeByQuery(req, res) {
     try {
-      const skills = await SkillService.findSkills({});
-      return res.json(skills);
+      const query = req.query;
+      await SkillService.delete(query);
+      return res.sendStatus(200);
     } catch (err) {
       console.log(err);
-      return res.sendStatus(300);
+      return res.sendStatus(404);
     }
   }
 
-  async getById(req, res) {
+  async getByQuery(req, res) {
     try {
-      const id = req.query.id;
-      const skill = await SkillService.findProject({_id: id});
+      const query = req.query;
+      const skill = await SkillService.findAllAndPopulate(query);
       return res.json(skill);
     } catch (err) {
       console.log(err);

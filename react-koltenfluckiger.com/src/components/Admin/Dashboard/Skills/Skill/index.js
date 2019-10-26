@@ -25,10 +25,21 @@ class Skill extends Component {
   }
 
   render() {
-    return (<li>
-      <div className="skill-container">
-        <div className="skill-circle">{this.abbreviation}</div>
-      </div>
+    return (<li className="admin-li-skill-container">
+      <Link to={`${this.props.match.path}/${this.title}`}>
+        <div className="admin-skill-container">
+          <span className="admin-skill-title-action">
+            <b>{this.title}</b>
+          </span>
+          <div className="fading-seperator"></div>
+          <ul className="skill-subskill-ul-container">
+            {this.subSkills.map(skill => <li key={skill.title} className="skill-subskill-li-container">{skill.title}</li>)}
+          </ul>
+        </div>
+      </Link>
+      <button className="skills-delete-action">
+        <i onClick={() => this.deleteSkill(this.id)} className="fas fa-fw fa-times"></i>
+      </button>
     </li>)
   }
 }

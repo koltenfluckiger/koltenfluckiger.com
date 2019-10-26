@@ -4,11 +4,8 @@ class AdminController {
 
   async login(req, res) {
     try {
-      const username = req.body.username;
-      const password = req.body.password;
-      const secretKey = req.body.secretKey;
-
-      const authToken = await AdminService.authenicate({username: username, password: password, secretKey: secretKey});
+      const payload = req.body;
+      const authToken = await AdminService.authenicate(payload);
       return res.cookie("token", authToken).status(200).json({success:true});
     } catch {
       return res.sendStatus(401);

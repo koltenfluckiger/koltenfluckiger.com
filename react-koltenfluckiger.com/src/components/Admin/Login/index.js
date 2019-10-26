@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
-import ApiHandler from '../../../utils/apihandler';
+import {Input, Button, Label, Title} from '../../common';
+import {ApiHandler} from '../../../utils';
 
 import "./style.scss";
 
@@ -21,13 +22,14 @@ class Login extends Component {
     const password = e.target.password.value;
     const secretKey = e.target.secretKey.value;
 
-    try {
-      const response = await ApiHandler.post('/admin/login', {
-        username: username,
-        password: password,
-        secretKey: secretKey
-      }, "json");
+    const payload = {
+      username: username,
+      password: password,
+      secretKey: secretKey
+    };
 
+    try {
+      const response = await ApiHandler.post('/admin/login', "json",  payload);
       if (response.data.success) {
         this.props.history.push('/admin/dashboard');
       }
@@ -42,27 +44,22 @@ class Login extends Component {
   render() {
     return (<div className="login-container">
       <div className="login-form-container">
-        <div>
-          <h2>Sign In</h2>
-        </div>
-        <div className="hr"></div>
         <form onSubmit={this.handleSubmit} method="post" encType="application/x-www-form-urlencoded">
           <div className="login-form">
-            <div className="sign-in-htm">
               <div className="group">
-                <label htmlFor="user" className="login-label">Username</label>
-                <input id="user" type="text" className="input" name="username"/>
+                <Label for="user" variant="login-label" text="Username"/>
+                <Input id="user" type="text" variant="input" name="username"/>
               </div>
               <div className="group">
-                <label htmlFor="password" className="login-label">Password</label>
-                <input id="password" type="password" className="input" name="password"/>
+                <Label for="password" variant="login-label" text="Password"/>
+                <Input id="password" type="password" variant="input" name="password"/>
               </div>
               <div className="group">
-                <label htmlFor="secretKey" className="login-label">Secret Key</label>
-                <input id="secretKey" type="password" className="input" name="secretKey"/>
+                <Label for="secretKey" variant="login-label" text="Secret Key"/>
+              <Input id="secretKey" type="password" variant="input" name="secretKey"/>
               </div>
               <div className="group">
-                <input type="submit" className="button" value="Sign In"/>
+                <Button type="submit" variant="button" text="Sign In"/>
               </div>
               {
                 this.state.isError
@@ -70,7 +67,6 @@ class Login extends Component {
                   : <></>
               }
             </div>
-          </div>
         </form>
       </div>
     </div>)

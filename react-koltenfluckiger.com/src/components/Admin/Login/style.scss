@@ -1,25 +1,8 @@
-.login-container h2 {
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 20px 0px;
-  color: #FFF;
-}
 
 *,
 :after,
 :before {
   box-sizing: border-box;
-}
-
-.clearfix:after,
-.clearfix:before {
-  content: '';
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-  display: block;
 }
 
 .login-form-container {

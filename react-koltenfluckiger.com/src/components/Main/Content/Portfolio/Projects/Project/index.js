@@ -7,26 +7,27 @@ import "./style.scss";
 class Project extends Component {
 
   static propTypes = {
-    href: PropTypes.string,
+    id: PropTypes.number,
     title: PropTypes.string,
     screenshotIconRef: PropTypes.string,
     skills: PropTypes.array,
     date: PropTypes.string,
-    id: PropTypes.number
+    searchTags: PropTypes.array
   }
 
   constructor(props) {
     super(props);
     this.href = props.href;
     this.title = props.title;
-    this.screenshotIconRef = props.screenshotIconRef
+    this.screenshotIconRef = props.screenshotIconRef;
     this.skills = props.skills;
     this.date = props.date;
     this.id = props.id;
+    this.searchTags = props.searchTags;
   }
 
   render() {
-    return (<Link to={`/`}>
+    return (<Link to={`/projects/${this.id}`}>
       <div className="project-container">
         <img alt={this.title} src={this.screenshotIconRef} className="project-screenshot-icon"/>
         <div className="project-details-container">

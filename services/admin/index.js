@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("../../config.js");
-const {Database} = require("../../models");
-const {Admin} = require("../../models");
 const logger = require('node-logger').createLogger('/tmp/development.log');
+
+const {Database, Admin} = require("../../models");
 
 class AdminService {
 
@@ -26,7 +26,8 @@ class AdminService {
 
   async authenicate(payload) {
     try {
-      const user = await Database.findOne(Admin, {username: payload.username});
+      const filter = JSON.stringify({filter: {username: payload.username}});
+      const user = await Database.findOne(Admin, filter);
       const passwordMatch = await bcrypt.compare(payload.password, user.password);
       const secretKeyMatch = await bcrypt.compare(payload.secretKey, user.secretKey);
 

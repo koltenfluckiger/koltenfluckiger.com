@@ -6,11 +6,21 @@ mongoose.skills_conn = mongoose.createConnection("mongodb://localhost:27017/skil
 });
 
 const skillSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   title: String,
-  subskills: [String],
+  subSkills: [{type: mongoose.Schema.Types.ObjectId, ref: 'submodel'}],
   abbreviation: String,
   searchTags: [String]
 });
 
-module.exports = mongoose.skills_conn.model("model", skillSchema);
+const subSkillSchema = new mongoose.Schema({
+  title: String,
+  searchTags: [String]
+});
+
+const Skill = mongoose.skills_conn.model("model", skillSchema);
+const SubSkill = mongoose.skills_conn.model("submodel", subSkillSchema);
+
+module.exports = {
+  Skill,
+  SubSkill
+}

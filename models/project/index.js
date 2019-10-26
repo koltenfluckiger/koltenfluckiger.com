@@ -4,12 +4,12 @@ mongoose.project_conn = mongoose.createConnection("mongodb://localhost:27017/pro
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+
 const projectSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   title: String,
   description: String,
   date: String,
-  skill: [mongoose.Schema.Types.ObjectId],
+  skills: [mongoose.Schema.Types.ObjectId],
   sourceCodeLink: String,
   hostedLink: String,
   hostedStatus: Boolean,

@@ -18,11 +18,15 @@
     max-width: 540px;
   }
 }
-@media screen and (min-width: 641px){
-  .admin-skills-list-form-container  {
+@media screen and (min-width: 641px) {
+  .admin-skills-list-form-container {
     display: -webkit-box;
     display: -ms-flexbox;
-    display:flex; display: -webkit-box; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     margin-right: auto;
     margin-left: auto;
   }
@@ -36,8 +40,6 @@
   padding-right: 15px;
   padding-left: 15px;
 }
-
-
 
 .admin-skills-list-container {
   display: flex;
@@ -56,8 +58,9 @@
 
 .admin-skill-list {
   display: flex;
-  flex-direction: column;
-  flex-basis: 50%;
+  display: -ms-flexbox;
+  flex-wrap: wrap;
+  margin: 22.5px 0;
 }
 
 .admin-new-skill-container {
@@ -87,6 +90,10 @@
   padding: 15px;
   margin: 22.5px 0;
 }
+.admin-skills-container{
+  flex-basis: 50%;
+}
+
 .admin-form-group {
   display: flex;
 }
@@ -94,8 +101,8 @@
 .form-control {
   border: none;
   outline: none;
-  padding: 15px 0px;
-  width:100%;
+  padding: 15px 0;
+  width: 100%;
   font-size: 12px;
   border-bottom: 2px solid #d9d9d9;
 }
@@ -103,8 +110,45 @@
 .button-form-control {
   border: none;
   outline: none;
-  padding: 15px 0px;
+  padding: 15px 0;
   font-size: 12px;
-  width:100%;
-  margin:10px;
+  width: 100%;
+  margin: 10px;
+}
+
+.admin-skill-container {
+  text-align: center;
+  line-height: 1.3em;
+  cursor: pointer;
+  background-color: #fff;
+  background-clip: border-box;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+  padding: 25px;
+  margin: 10px 10px 10px 0;
+  border-radius: 10px;
+}
+
+.admin-ul-skill-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.admin-li-skill-container {
+  position: relative;
+  flex-basis: 20%;
+}
+
+.skills-delete-action {
+  position: absolute;
+  padding: 5px;
+  margin: 0;
+  top: 0;
+  right: 0;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #F95E7A;
+  color: white;
+  cursor: pointer;
 }

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
-import ApiHandler from '../../../../utils/apihandler';
+import {ApiHandler} from '../../../../utils';
 
 import "./style.scss";
 

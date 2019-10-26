@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
-const {Database} = require("../../models");
-const {Project} = require("../../models");
 const logger = require('node-logger').createLogger('/tmp/development.log');
+
+const {Database, Project} = require("../../models");
 
 class ProjectService {
 
-  async createProject(payload) {
+  async create(payload) {
 
     try {
-      payload._id = new mongoose.Types.ObjectId;
       const project = new Project(payload);
       const status = await Database.create(project);
       return Promise.resolve(status);
@@ -18,7 +17,7 @@ class ProjectService {
     }
   }
 
-  async updateProject(payload, queryParams) {
+  async update(payload, queryParams) {
     try {
       const status = await Database.updateOne(Project, payload, queryParams);
       return Promise.resolve(status);
@@ -28,7 +27,7 @@ class ProjectService {
     }
   }
 
-  async updateProjects(payload,queryParams) {
+  async updateMany(payload, queryParams) {
     try {
       const status = await Database.updateMany(Project, payload, queryParams);
       return Promise.resolve(status);
@@ -38,7 +37,7 @@ class ProjectService {
     }
   }
 
-  async findProject(queryParams) {
+  async find(queryParams) {
     try {
       const project = await Database.findOne(Project, queryParams);
       return Promise.resolve(project);
@@ -48,7 +47,7 @@ class ProjectService {
     }
   }
 
-  async findProjects(queryParams) {
+  async findAll(queryParams) {
     try {
       const projects = await Database.findAll(Project, queryParams);
       return Promise.resolve(projects);
@@ -58,7 +57,17 @@ class ProjectService {
     }
   }
 
-  async deleteProject(queryParams) {
+  async findAllAndPopulate(queryParams) {
+    try {
+      const projects = await Database.findAllAndPopulate(Project, queryParams);
+      return Promise.resolve(projects);
+    } catch (err) {
+      logger.info(err);
+      return Promise.reject(err);
+    }
+  }
+
+  async delete(queryParams) {
     try {
       const status = await Database.deleteOne(Project, queryParams);
       return Promise.resolve(status);
@@ -67,6 +76,17 @@ class ProjectService {
       return Promise.reject(err);
     }
   }
+
+  async deleteMany(queryParams) {
+    try {
+      const status = await Database.deleteMany(Project, queryParams);
+      return Promise.resolve(status);
+    } catch (err) {
+      logger.info(err);
+      return Promise.reject(err);
+    }
+  }
+
 }
 
 module.exports = new ProjectService();
