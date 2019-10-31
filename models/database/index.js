@@ -36,10 +36,10 @@ class Database {
 
   async findOne(Model, queryParams) {
     try {
-
-      const filter = JSON.parse(queryParams.filter);
-      const field = queryParams.field
-        ? queryParams.field
+      const params = JSON.parse(queryParams);
+      const filter = params.filter;
+      const field = params.field
+        ? params.field
         : "";
       const model = await Model.findOne(filter).populate(field);
 

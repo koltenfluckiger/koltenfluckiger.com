@@ -40,7 +40,7 @@ class AdminService {
       else {
         return Promise.reject();
       }
-    } catch {
+    } catch(err) {
       return Promise.reject();
     }
   }

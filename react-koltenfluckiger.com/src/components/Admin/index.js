@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { withRouter } from "react-router";
 
-import Login from "./Login";
-import Dashboard from "./Dashboard";
+import Login from "./login";
+import Dashboard from "./dashboard";
 
-import {Error} from "../Routing";
+import {Error} from "../common/routing";
 
 class Admin extends Component {
 

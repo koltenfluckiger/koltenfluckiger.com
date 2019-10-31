@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+import {withRouter} from "react-router";
+import {Input, Label, BackButton} from '../../../common';
 import {ApiHandler} from '../../../../utils';
 
 import "./style.scss";
@@ -40,12 +42,14 @@ class Contact extends Component {
     const email = e.target.email.value;
     const message = e.target.message.value;
 
+    const payload = {
+      name: name,
+      email: email,
+      message: message
+    }
+
     try {
-      const response = await ApiHandler.post('/contact/email/send', {
-        name: name,
-        email: email,
-        message: message
-      }, "json");
+      const response = await ApiHandler.post('/contact/email/send', payload, "json");
 
       if (response.data.success) {
         this.setState({success: true});
@@ -67,12 +71,10 @@ class Contact extends Component {
     return (<div className="contact-container">
       <div className="contact-card">
         <div className="contact-link-container">
-          <a href="/" className="back-button">
-            <i className="fas fa-arrow-left"></i>
-          </a>
+          <BackButton/>
         </div>
         <div className="contact-card-content">
-          <h2>Let"s get in touch!</h2>
+          <h2>Let's get in touch!</h2>
           <h6>Send me a message with any inquires you may have.</h6>
         </div>
         <div className="contact-form-container">
@@ -137,4 +139,4 @@ class Contact extends Component {
     </div>)
   }
 }
-export default Contact;
+export default withRouter(Contact);

@@ -1,11 +1,11 @@
 import React, {Component} from "react";
+import Icon from "../icon";
+
 import PropTypes from "prop-types";
 
-import Icon from "../Icon";
+import './external-link.module.scss';
 
-import "./style.scss";
-
-class ExternalItem extends Component {
+class ExternalLink extends Component {
 
   static propTypes = {
     href: PropTypes.string,
@@ -29,4 +29,4 @@ class ExternalItem extends Component {
   }
 }
 
-export default ExternalItem;
+export default ExternalLink;

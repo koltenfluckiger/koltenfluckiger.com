@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
-import Sidebar from "./Sidebar";
-import Content from "./Content";
+import Sidebar from "./sidebar";
+import Content from "./content";
 
 class Main extends Component {
 

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import './input.module.scss';
+
 class Input extends Component {
 
   constructor(props) {

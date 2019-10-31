@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import './icon.module.scss';
 
 class Icon extends Component {
 

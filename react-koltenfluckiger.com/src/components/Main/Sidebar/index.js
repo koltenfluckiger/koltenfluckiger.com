@@ -1,12 +1,11 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {InternalLink, ExternalLink} from "../../common";
 import PropTypes from "prop-types";
 
-import Avatar from "./Avatar";
-import Menu from "./Menu";
-import InternalLink from "./InternalLink";
-import ExternalLink from "./ExternalLink";
-import Divider from "./Divider";
+import Avatar from "./avatar";
+import Menu from "./menu";
+import Divider from "./divider";
 
 import InternalLinks from "../../../static/links-internal-config";
 import ExternalLinks from "../../../static/links-external-config";

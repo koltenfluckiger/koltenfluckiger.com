@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-
-import Icon from "../Icon";
+import {Icon} from "../../../common";
 
 class Divider extends Component {
 

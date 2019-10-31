@@ -3,8 +3,8 @@ import {withRouter} from "react-router";
 import {ApiHandler} from '../../../../utils';
 import {Input, Tagger, Title} from '../../../common';
 
-import Skill from './Skill';
-import Subskill from './Subskill';
+import Skill from './skill';
+import Subskill from './subskill';
 import PropTypes from 'prop-types';
 
 import './style.scss';

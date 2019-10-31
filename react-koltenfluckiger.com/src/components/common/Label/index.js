@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import './label.module.scss';
+
 class Label extends Component {
 
   constructor(props) {

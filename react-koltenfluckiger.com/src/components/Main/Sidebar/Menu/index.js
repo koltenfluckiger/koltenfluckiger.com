@@ -1,7 +1,6 @@
 import React, {Component} from "react";
+import {Icon} from "../../../common";
 import PropTypes from "prop-types";
-
-import Icon from "../Icon";
 
 import "./style.scss";
 
@@ -28,7 +27,6 @@ class Menu extends Component {
 
   render() {
     return (<li>
-      {console.log(this.state)}
       <a onClick={() => {this.extendSidebar(); this.handleClick();}} style={{cursor: "pointer"}} className="sidebar-links">
           <Icon variant={this.state.active ? "fa sidebar-icon fa-times" : this.variant}/>
       </a>

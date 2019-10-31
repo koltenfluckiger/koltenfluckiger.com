@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import PropTypes from "prop-types";
+import {Icon} from "../../../../../common";
 
-import Icon from "./Icon";
+import PropTypes from "prop-types";
 
 import "./style.scss";
 
@@ -9,7 +9,7 @@ class Skill extends Component {
 
   static propTypes = {
     title: PropTypes.string,
-    subskills: PropTypes.array,
+    subSkills: PropTypes.array,
     variant: PropTypes.string,
     abbreviation: PropTypes.string
   }
@@ -17,25 +17,23 @@ class Skill extends Component {
   constructor(props) {
     super(props);
     this.title = props.title;
-    this.subskills = props.subskills;
+    this.subSkills = props.subSkills;
     this.variant = props.variant;
     this.abbreviation = props.abbreviation;
   }
 
   render() {
-    return (
-      <div className="skill-container">
-      <Icon variant={this.variant} abbreviation={this.abbreviation} />
+    return (<div className="skill-container">
+      <div className="skill-circle blue-circle">{this.abbreviation}</div>
       <h6>{this.title}</h6>
       <ul>
-        {this.subskills.map((subskill) =>
-          <li key={subskill}>
-            {subskill}
-          </li>
-        )}
+        {
+          this.subSkills.map((subSkill) => <li key={subSkill._id}>
+            {subSkill.title}
+          </li>)
+        }
       </ul>
-    </div>
-      )
+    </div>)
   }
 }
 

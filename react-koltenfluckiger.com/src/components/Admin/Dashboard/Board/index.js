@@ -3,8 +3,8 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { withRouter } from "react-router";
 import PropTypes from 'prop-types';
 
-import Projects from '../Projects';
-import Skills from '../Skills';
+import Projects from '../projects';
+import Skills from '../skills';
 
 import './style.scss';
 

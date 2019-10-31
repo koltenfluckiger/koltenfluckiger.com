@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import { withRouter } from "react-router";
-import InternalLink from '../../../Main/Sidebar/InternalLink';
+import {InternalLink} from '../../../common';
 
 import './style.scss';
 

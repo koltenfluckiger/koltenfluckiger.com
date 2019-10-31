@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 
-import Projects from "./Projects";
-import Skills from "./Skills";
+import Projects from "./projects";
+import Skills from "./skills";
 
 import "./style.scss";
 

@@ -1,8 +1,9 @@
 import React, {Component} from "react";
+import {Title} from "../../../../common";
 
-import Title from "../Title";
-import SearchBar from "./SearchBar";
-import Project from "./Project";
+import ApiHandler from '../../../../../utils/api-handler';
+import SearchBar from "./search-bar";
+import Project from "./project";
 
 import "./style.scss";
 

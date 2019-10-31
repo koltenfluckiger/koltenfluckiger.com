@@ -10,7 +10,7 @@ import {
   Title
 } from '../../../common';
 
-import Project from './Project';
+import Project from './project';
 import PropTypes from 'prop-types';
 
 import './style.scss';

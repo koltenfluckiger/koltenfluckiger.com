@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-import Portfolio from "./Portfolio";
-import About from "./About";
-import Contact from "./Contact";
+import Portfolio from "./portfolio";
+import About from "./about";
+import Contact from "./contact";
 
 class Content extends Component {
 
