@@ -1,0 +1,10 @@
+@media (min-width: 99.1rem) {
+  .column {
+    max-width: 50%;
+  }
+}
+
+.column {
+  padding: 0 1.5rem;
+  width: 100%;
+}

@@ -1,0 +1,77 @@
+.sml {
+  font-size: 1.6rem;
+}
+.mdm {
+  font-size: 2.2rem;
+}
+.lrg {
+  font-size: 2.8rem;
+}
+
+.contactInput {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #f6f7fb;
+  background-clip: padding-box;
+  border: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.loginInput {
+  border: none;
+  outline: none;
+  padding: 0.7rem 2rem;
+  border-radius: 2.5rem;
+  width: 100%;
+  color: #000;
+  display: block;
+  background: hsla(0, 0%, 100%, .7);
+  font-size: 1.2rem;
+}
+
+.admin-input {
+  border: none;
+  outline: none;
+  margin: 0.8rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border-bottom: 0.2rem solid #d9d9d9;
+}
+.taggerInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+input[data-type="password"] {
+  text-security: circle;
+  -webkit-text-security: circle;
+}
+
+[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+[type="file"]+label {
+  background: #4c87fc;
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.3s;
+  vertical-align: middle;
+}

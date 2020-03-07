@@ -1,0 +1,46 @@
+@media screen and (min-width: 1200px) {
+  .panel {
+    max-width: 114rem;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .panel {
+    max-width: 96rem;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .panel {
+    max-width: 72rem;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .panel {
+    max-width: 54rem;
+  }
+}
+
+.panel {
+  border: none;
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+}
+.padded-content-sml {
+  padding: 1.6rem;
+}
+.padded-content-mdm {
+  padding: 2.4rem;
+}
+.padded-content-lrg {
+  padding: 3.2rem;
+}
+
+.visible {
+  background-color: #FFF;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, .05);
+}

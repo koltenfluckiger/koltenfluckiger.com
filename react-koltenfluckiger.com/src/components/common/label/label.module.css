@@ -1,0 +1,17 @@
+.loginLabel {
+  color: #fff;
+  font-size: 1.2rem;
+  width: 100%;
+  display: block;
+  text-transform: uppercase;
+}
+
+.admin-input {
+  margin: 0.8rem;
+  border: none;
+  outline: none;
+  padding: 1.5rem 0rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border-bottom: 0.2rem solid #d9d9d9;
+}

@@ -1,0 +1,50 @@
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+.loginFormContainer {
+  border-radius: 1rem;
+  margin: auto;
+  background-color: rgba(255, 255, 255, .5);
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  border: none;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, 0.05);
+  padding: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 52.5rem;
+  box-shadow: 0 1.2rem 1.5rem 0 rgba(0,0,0,.24),0 1.7rem 5rem 0 rgba(0,0,0,.19);
+}
+
+.loginContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #E15554;
+}
+
+.loginForm {
+  min-width: 30rem;
+  max-width: 30rem;
+  position: relative;
+  perspective: 100rem;
+  transform-style: preserve-3d;
+  padding: 2rem;
+}
+
+.group {
+  color: #FFF;
+  margin-bottom: 1.5rem;
+}
+.group:last-child{
+  margin-top: 4rem;
+  margin-bottom: 0;
+}

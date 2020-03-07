@@ -1,0 +1,13 @@
+.contactFormContainer {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+}
+.inputContainer {
+  margin: 1rem 0;
+}
+.buttonsContainer {
+  padding: 1.6rem 0;
+}

@@ -1,0 +1,53 @@
+.taggerContainer {
+  display: block;
+}
+
+.taggerTagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.xButton {
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  top: -0.75rem;
+  right: -0.75rem;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  background-color: #F95E7A;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.taggerTag {
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.7rem 0.7rem 0.7rem 0rem;
+  padding: 1rem;
+  transition: .13s ease-out;
+  background-color: #4c87fc;
+  color: white;
+  position: relative;
+  background-clip: border-box;
+  box-shadow: 0 0.7rem 1.5rem 0 rgba(0, 0, 0, 0.05);
+}
+
+.taggerInput {
+  outline: none;
+  border: none;
+}
+
+.admin-input {
+  border: none;
+  outline: none;
+  margin: 0.8rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border-bottom: 0.2rem solid #d9d9d9;
+}

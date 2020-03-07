@@ -1,0 +1,11 @@
+.sidebar-item {
+  text-decoration: none;
+  color: #afb0b5;
+  line-height: 4rem;
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+  display: inline-flex;
+}
+.sidebar-item:hover{
+  color: #000;
+}

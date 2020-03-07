@@ -1,0 +1,23 @@
+.sidebarItem {
+  text-decoration: none;
+  color: #afb0b5;
+  line-height: 4rem;
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+  display: inline-flex;
+}
+
+.sidebarDividerItem {
+  display: block;
+  text-decoration: none;
+  color: #afb0b5;
+  line-height: 4rem;
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+}
+
+.active, .sidebarItem:hover {
+  color: #000;
+  border-left: 0.4rem solid #4c87fc;
+  text-indent: -0.4rem;
+}

@@ -1,0 +1,36 @@
+.searchBar {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, .05);
+  transition: all 0.25s ease;
+  display: flex;
+  display: -ms-flexbox;
+}
+
+.searchBarInputGroupText {
+  color: #ABACAC;
+  border: none;
+  background-color: #FFF;
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  font-size: 2.5rem;
+}
+
+#projectSearch {
+  height: 5rem;
+  background-color: #FFF;
+  border: none;
+  flex-grow: 1;
+  margin: 0px !important;
+  font-size: 1.6rem;
+}
+
+#projectSearch:focus {
+  outline: none;
+}
+
+#projectSearch:placeholder {
+  color: #ABACAC;
+}

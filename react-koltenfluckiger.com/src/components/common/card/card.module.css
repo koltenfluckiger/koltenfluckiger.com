@@ -1,0 +1,29 @@
+/* @media screen and (min-width: 1200px) {
+  .card {
+    max-width: 114rem;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .card {
+    max-width: 96rem;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .card {
+    max-width: 72rem;
+  }
+}
+*/
+.card {
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, .05);
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+}

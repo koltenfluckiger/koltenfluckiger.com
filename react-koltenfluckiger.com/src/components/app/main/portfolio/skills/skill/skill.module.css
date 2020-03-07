@@ -1,0 +1,79 @@
+.skill-container {
+  text-align: center;
+  line-height: 1.3rem;
+  padding: 0.0.5rem 0;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.skills-container::after {
+  font-weight: 700;
+  margin: 0.4rem 0;
+}
+
+.skill-circle {
+  border-radius: 50%;
+  font-size: 80%;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem auto;
+  display: grid;
+  place-items: center;
+  transition: all .25s ease;
+  border: 0.5rem solid transparent;
+}
+
+.skill-container li {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.blue-circle {
+  background-color: #EFF2F9;
+  color: #5289E1;
+}
+
+.blue-circle:hover {
+  border-radius: 50%;
+  border: 0.5rem solid #5289E1;
+}
+
+.red-circle {
+  background-color: #FEEAF0;
+  color: #F95E7A;
+}
+
+.red-circle:hover {
+  border-radius: 50%;
+  border: 0.5rem solid #F95E7A;
+}
+
+.lemon-circle {
+  background-color: #FFF9CC;
+  color: #FFE100;
+}
+
+.lemon-circle:hover {
+  border-radius: 50%;
+  border: 0.5rem solid #FFE100;
+}
+
+.diamond-circle {
+  background-color: #C7EEF9;
+  color: #56D5FA;
+}
+
+.diamond-circle:hover {
+  border-radius: 50%;
+  border: 0.5rem solid #56D5FA;
+}
+
+.green-circle {
+  background-color: #eaf7ed;
+  color: #39B24E;
+}
+
+.green-circle:hover {
+  border-radius: 50%;
+  border: 0.5rem solid #39B24E;
+}

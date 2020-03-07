@@ -1,0 +1,15 @@
+.contentCard {
+  width: -webkit-fill-available;
+  width: -moz-fill-available;
+  width: fill-available;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, .05);
+  display: flex;
+  display: -ms-flexbox;
+  padding: 2.5rem;
+  margin: 0 1.5rem;
+  flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+}

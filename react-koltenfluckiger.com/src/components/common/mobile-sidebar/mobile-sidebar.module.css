@@ -1,0 +1,11 @@
+@media screen and (min-width: 64rem) {
+  .mobile-sidebar-toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .mobile-sidebar-toggle {
+    height: 7.5rem;
+  }
+}

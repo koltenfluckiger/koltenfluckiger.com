@@ -1,0 +1,7 @@
+.projects-container {
+  display:flex; display: -ms-flexbox;
+  flex-direction: column; -moz-flex-direction: column; -o-flex-direction: column;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  flex-basis: 50%;
+}

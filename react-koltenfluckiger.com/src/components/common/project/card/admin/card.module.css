@@ -1,0 +1,47 @@
+.projectContainer {
+  border: none;
+  background-color: #FFF;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, .05);
+  display: flex;
+  display: -ms-flexbox;
+  padding: 2rem;
+  align-items: center;
+  margin: 2.25rem 0;
+}
+
+.projectIcon {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  box-shadow: 0 0.5rem 1.5rem 0 rgba(0, 0, 0, .125);
+  margin: 0 1.5rem;
+}
+
+.projectDetailsContainer {
+  padding: 0 1.5rem;
+  flex-grow: 1;
+}
+
+.projectDateContainer {
+  padding: 0 1.5rem;
+}
+
+.projectTitle {
+  color: #000;
+  margin: 0.5rem 0rem;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.projectDate {
+  color: #7F818C;
+  font-size: 1.2rem;
+}
+
+.projectSkills {
+  color: #4C87FC;
+}
+.pointer {
+  cursor: pointer;
+}

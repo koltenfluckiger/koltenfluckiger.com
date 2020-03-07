@@ -1,0 +1,27 @@
+.container {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: inherit;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.exitContainer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background-color: transparent;
+  transition: all 0.25s linear;
+}
+
+.exitContainer:hover {
+  transform: rotate(180deg);
+}
