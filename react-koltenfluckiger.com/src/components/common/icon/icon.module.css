@@ -1,0 +1,32 @@
+.sml {
+  font-size: 2rem;
+}
+
+.mdm {
+  font-size: 4rem;
+}
+
+.lrg {
+  font-size: 6rem;
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.red {
+  color: #f95e7a;
+}
+
+.white {
+  color: #000;
+}
+
+.sidebar-span {
+  width: 7.5rem;
+}
+
+.sidebar-icon {
+  font-size: 2.25rem;
+  vertical-align: -15%;
+}

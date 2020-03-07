@@ -1,11 +1,10 @@
 .container {
   background: rgba(0, 0, 0, 0.5);
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: inherit;
+  height: 100%;
   z-index: 999;
-  display: flex;
-  align-items: center;
+  overflow-y: scroll;
 }
 
 .exitContainer {

@@ -32,7 +32,7 @@ class Main extends Component {
         <GridItem>
           <Sidebar isExtended={this.state.isExtended} extendSidebar={this.extendSidebar} items={PublicLinks}/>
         </GridItem>
-        <GridItem>
+        <GridItem variant={{classes: "overflow-y-scroll"}}>
           <MobileSidebar isExtended={this.state.isExtended} extendSidebar={this.extendSidebar} items={PublicLinks}/>
           <Switch>
             <Route path="/" exact component={Portfolio}/>

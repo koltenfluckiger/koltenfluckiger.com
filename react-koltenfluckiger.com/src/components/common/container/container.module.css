@@ -1,5 +1,4 @@
 .container {
-  height: 100%;
+  height: inherit;
   transition: all .5s ease;
-  overflow-y: scroll;
 }

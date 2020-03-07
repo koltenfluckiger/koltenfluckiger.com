@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ClassMapper from "sass-css-modules-class-mapper";
 import PropTypes from 'prop-types';
 
 import styles from "./textarea.module.css";
@@ -7,7 +8,7 @@ class TextArea extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.variant = styles[props.variant];
+    this.variant = ClassMapper.map(styles, props.variant);
   }
 
   render() {

@@ -43,11 +43,11 @@ class ProjectMedia extends Component {
     return (<div className={styles.container}>
       <div className={styles.slideshowContainer}>
         <div className={styles.prevContainer}>
-          <Icon onClick={this.previous} variant="mdm fas fa-chevron-left"/>
+          <Icon onClick={this.previous} variant={{classes: "mdm fas fa-chevron-left"}}/>
         </div>
         {<img className={styles.screenshot} src={this.screenshots[currentIndex]}></img>}
         <div className={styles.nextContainer}>
-          <Icon onClick={this.next} variant="mdm fas fa-chevron-right"/>
+          <Icon onClick={this.next} variant={{classes: "mdm fas fa-chevron-right"}}/>
         </div>
       </div>
     </div>)

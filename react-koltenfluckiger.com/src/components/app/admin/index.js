@@ -40,12 +40,14 @@ class Admin extends Component {
     return (<Router>
       <Grid variant={{classes: "two-fixed"}}>
           <Sidebar isExtended={this.state.isExtended} extendSidebar={this.extendSidebar} items={AdminLinks}/>
+          <GridItem variant={{classes: "overflow-y-scroll"}}>
           <Switch>
             <Route strict path={`${this.props.match.path}/dashboard`} component={Dashboard}/>
             <Route strict path={`${this.props.match.path}/projects`} component={Projects}/>
             <Route strict path={`${this.props.match.path}/skills`} component={Skills}/>
             <Route component={Error}/>
           </Switch>
+          </GridItem>
       </Grid>
     </Router>)
   }

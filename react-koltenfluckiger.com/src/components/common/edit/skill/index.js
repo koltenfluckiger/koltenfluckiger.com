@@ -23,6 +23,7 @@ class Skill extends Component {
       loading: true,
       skill: null
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async handleDelete() {
@@ -57,7 +58,11 @@ class Skill extends Component {
       abbreviation: abbreviation
     };
     try {
-      const results = await AxiosHandler.put("/skills", payload, {type: "json"});
+      const results = await AxiosHandler.put("/skills/edit", payload, {type: "multiPart", params: {query: {
+        filter: {
+          _id: this.props._id
+        }
+      }}});
       if (results.status === 200) {
         this.props.history.go(this.props.location.pathname);
       }

@@ -25,7 +25,6 @@ class Menu extends Component {
   }
 
   render() {
-
     return (<Fragment>
       {
         this.mobile
@@ -35,10 +34,10 @@ class Menu extends Component {
             }} style={{
               cursor: "pointer"
             }} className={this.variant}>
-            <Icon sidebarIcon="sidebarIcon" variant={{
+            <Icon key={this.state.active} sidebarIcon="sidebarIcon" variant={{
                 classes: this.state.active
-                  ? "sidebar-icon fa fa-times"
-                  : "sidebar-icon fas fa-bars"
+                ? "sidebar-icon fas fa-chevron-left"
+                : "sidebar-icon fas fa-chevron-right"
               }}/>
           </a>)
           : (<Li variant={{
@@ -50,10 +49,10 @@ class Menu extends Component {
               }} style={{
                 cursor: "pointer"
               }} className={this.variant}>
-              <Icon sidebarIcon="sidebarIcon" variant={{
+              <Icon key={this.state.active} sidebarIcon="sidebarIcon" variant={{
                   classes: this.state.active
-                    ? "sidebar-icon mobile fa fa-times"
-                    : "sidebar-icon fas fa-bars"
+                  ? "sidebar-icon fas fa-chevron-left"
+                  : "sidebar-icon fas fa-chevron-right"
                 }}/>
               <span>Menu</span>
             </a>

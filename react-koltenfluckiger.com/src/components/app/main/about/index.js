@@ -5,6 +5,7 @@ import {
   Button,
   ContentCard,
   Container,
+  FadingSeperator,
   Seperator,
   SubContainer
 } from '../../../common';
@@ -24,13 +25,11 @@ class About extends React.PureComponent {
             <img alt="avatar" className={styles.aboutMeAvatar} src={AvatarSource}/>
           </div>
           <h2>About Me</h2>
-          <Seperator inlineStyle={{
-              margin: "2.5rem 0rem"
-            }}/>
+          <FadingSeperator/>
           <div className="about-me-container">
             <p>Hello, I'm Kolten!</p>
             <br/>
-            <p>I am a 26 year old software developer from Boise, Idaho. I enjoy and love programming! It's fun to create something from nothing, but an idea. I want to create a career out of my passion for software development.</p>
+            <p>I am a 26 year old software developer from Boise, Idaho. I enjoy and love programming! It's fun to create something from nothing with only an idea. I want to create a career out of my passion for software development.</p>
             <br/>
             <p>I've been developing software for 3+ years now. I initially started out with iOS applications with <b>Swift</b>. I then started with <b>Python</b>, and <b>Objective-C</b>. I use Python daily at my current place of work developing plugins and scripts. I started with Objective-C to create tweaks for jailbroken iOS devices.</p>
             <br/>

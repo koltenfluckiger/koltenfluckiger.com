@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
 import {withChildren} from "../../../higher-order-components";
 import ClassMapper from "sass-css-modules-class-mapper";
-import PropTypes from 'prop-types';
 
 import styles from "./span.module.css";
 
 class Span extends React.PureComponent {
-
-  static propTypes = {
-    variant: PropTypes.string
-  }
 
   constructor(props) {
     super(props);

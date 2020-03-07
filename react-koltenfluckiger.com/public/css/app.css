@@ -27,6 +27,8 @@ time, mark, audio, video {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+scrollbar-width: none;
+-ms-overflow-style: none;
 }
 
 body {

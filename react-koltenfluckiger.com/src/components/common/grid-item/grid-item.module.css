@@ -16,3 +16,7 @@
   width: 100%;
   padding: 3rem;
 }
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}

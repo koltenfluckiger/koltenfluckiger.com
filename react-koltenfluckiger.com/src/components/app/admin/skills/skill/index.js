@@ -3,7 +3,7 @@ import {BrowserRouter as Route, Link} from "react-router-dom";
 import {withRouter} from "react-router";
 import {
   Button,
-  Seperator,
+  FadingSeperator,
   Icon,
   Li,
   Span,
@@ -29,7 +29,7 @@ class Skill extends React.PureComponent {
       <Span variant={{classes: "skill-span"}}>
         {title}
       </Span>
-      <Seperator/>
+      <FadingSeperator/>
       <Ul>
         {
           subSkills.map(skill => <Li key={skill.title} variant={{classes: "skills-subskills-li"}}>

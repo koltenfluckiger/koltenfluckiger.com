@@ -57,11 +57,11 @@ class Project extends Component {
     formData.set("searchTags", searchTags);
 
     try {
-      const results = await AxiosHandler.put("/projects/edit", {type: "multiPart", params: {query: {
+      const results = await AxiosHandler.put("/projects/edit", formData, {type: "multiPart", params: {query: {
         filter: {
           _id: this.props._id
         }
-      }}}, formData);
+      }}});
       if (results.status === 200) {
         this.props.history.go(this.props.location.pathname);
       }
@@ -107,7 +107,7 @@ class Project extends Component {
       <Form preventEnterSubmit="preventEnterSubmit" id="edit-project-form" handleSubmit={handleSubmit} encType="multiPart">
         <FormGroup>
           <Input variant={{classes: "admin-input"}} required="required" name="title" autoComplete='off' type='text' placeholder='Title' defaultValue={project.title}/>
-          <Tagger id="subskill-tags" variant={{classes: "tagger-input"}} options={{
+          <Tagger id="subskill-tags" name="subSkills" variant={{classes: "tagger-input"}} options={{
               allow_spaces: true,
               onlyWhiteList: true,
               defaultTags: project.subSkills

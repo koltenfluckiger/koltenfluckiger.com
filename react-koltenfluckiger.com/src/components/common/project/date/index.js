@@ -12,7 +12,7 @@ class ProjectDate extends React.PureComponent {
 
   render() {
     return (
-      <div className={styles.container}><h6>{this.text}</h6></div>
+      <div className={styles.container}><h6>Last updated: {this.text}</h6></div>
     )
   }
 }

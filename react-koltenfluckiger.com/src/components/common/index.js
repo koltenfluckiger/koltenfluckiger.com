@@ -6,6 +6,7 @@ import ColumnCard from "./column-card";
 import Column from "./column";
 import Container from "./container";
 import Edit from "./edit";
+import FadingSeperator from "./fading-seperator";
 import FileInput from "./file-input";
 import Form from "./form";
 import FormGroup from "./form-group";
@@ -22,7 +23,6 @@ import MobileSidebar from "./mobile-sidebar";
 import Panel from "./panel";
 import Project from "./project";
 import SearchBar from "./search-bar";
-import Seperator from "./seperator";
 import Sidebar from "./sidebar";
 import SidebarItem from "./sidebar-item";
 import Status from "./status";
@@ -38,6 +38,7 @@ export {
   BackButton,
   Button,
   Card,
+  FadingSeperator,
   ContentCard,
   ColumnCard,
   Column,
@@ -59,7 +60,6 @@ export {
   Panel,
   Project,
   SearchBar,
-  Seperator,
   Sidebar,
   SidebarItem,
   Status,

@@ -23,6 +23,7 @@ class SubSkill extends Component {
       loading: true,
       subskill: null
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   async handleDelete() {
@@ -56,7 +57,11 @@ class SubSkill extends Component {
       searchTags: subskillSearchTags
     };
     try {
-      const results = await AxiosHandler.put("/subskills", payload, {type: "json"});
+      const results = await AxiosHandler.put("/subskills/edit", payload, {type: "multiPart", params: {query: {
+        filter: {
+          _id: this.props._id
+        }
+      }}});
       if (results.status === 200) {
         this.props.history.go(this.props.location.pathname);
       }

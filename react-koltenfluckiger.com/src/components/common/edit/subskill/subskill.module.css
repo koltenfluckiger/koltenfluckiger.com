@@ -21,6 +21,8 @@
   transition: transform 0.25s;
   transition-delay: 0.15s;
   max-width: 96rem;
+  z-index: 2;
+  top: 25%;
 }
 
 .exitContainer {

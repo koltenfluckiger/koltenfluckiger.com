@@ -40,8 +40,6 @@
       grid-template-columns: auto 1fr;
   height: 100%;
   width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 .two-mdm-gap {

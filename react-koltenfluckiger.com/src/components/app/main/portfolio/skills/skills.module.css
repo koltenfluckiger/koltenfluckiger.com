@@ -3,6 +3,7 @@
 }
 
 .skillsContainer {
-  display:flex; display: -ms-flexbox;
+  display:flex;
+  display: -ms-flexbox;
   flex-wrap: wrap;
 }

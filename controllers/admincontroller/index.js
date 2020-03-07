@@ -6,7 +6,6 @@ class AdminController {
   async login(req, res) {
     try {
       const payload = req.body;
-      console.log(payload)
       const authToken = await AdminService.authenicate(payload);
       return res.cookie("token", authToken).status(200).json({success:true});
     } catch(err) {

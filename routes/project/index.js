@@ -9,7 +9,7 @@ const {ProjectsController} = require("../../controllers");
 Router.use(BodyParser.json());
 Router.use(CookieParser());
 
-Router.post("/", AuthMiddleware.checkAuth, FileMiddleware.upload.fields([
+Router.post("/",JSONMiddleware.parse, AuthMiddleware.checkAuth, FileMiddleware.upload.fields([
   {
     name: 'icon'
   }, {
@@ -17,13 +17,13 @@ Router.post("/", AuthMiddleware.checkAuth, FileMiddleware.upload.fields([
   }
 ]), ProjectsController.create);
 
-Router.put("/edit", AuthMiddleware.checkAuth, FileMiddleware.upload.fields([
+Router.put("/edit",JSONMiddleware.parse, AuthMiddleware.checkAuth, FileMiddleware.upload.fields([
   {
     name: 'icon'
   }, {
     name: 'mediaFiles'
   }
-]), JSONMiddleware.parse, ProjectsController.editByQuery);
+]), ProjectsController.editByQuery);
 Router.delete("/", AuthMiddleware.checkAuth, JSONMiddleware.parse, ProjectsController.removeByQuery);
 Router.get("/:id", JSONMiddleware.parse, ProjectsController.getOneByQuery);
 Router.get("/", JSONMiddleware.parse, ProjectsController.getByQuery);
