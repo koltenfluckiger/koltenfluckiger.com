@@ -1,13 +1,8 @@
 const Express = require("express");
 const Router = Express.Router();
-const CookieParser = require("cookie-parser");
-const BodyParser = require("body-parser");
 const JSONMiddleware = require("express-json-object-middleware");
 const {AuthMiddleware, FileMiddleware} = require("../../middlewares");
 const {ProjectsController} = require("../../controllers");
-
-Router.use(BodyParser.json());
-Router.use(CookieParser());
 
 Router.post("/",JSONMiddleware.parse, AuthMiddleware.checkAuth, FileMiddleware.upload.fields([
   {

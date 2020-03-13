@@ -58,7 +58,7 @@ class Skill extends Component {
       abbreviation: abbreviation
     };
     try {
-      const results = await AxiosHandler.put("/skills/edit", payload, {type: "multiPart", params: {query: {
+      const results = await AxiosHandler.put("/skills/edit", payload, {type: "json", params: {query: {
         filter: {
           _id: this.props._id
         }

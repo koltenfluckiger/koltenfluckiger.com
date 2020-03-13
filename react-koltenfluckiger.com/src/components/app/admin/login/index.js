@@ -29,7 +29,7 @@ class Login extends Component {
     };
 
     try {
-      const response = await AxiosHandler.post('/admin/login',  payload, {type: "json"});
+      const response = await AxiosHandler.post('/auth/login',  payload, {type: "json"});
       if (response.data.success) {
         this.props.history.push("/admin/dashboard")
       }

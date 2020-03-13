@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {withRouter} from "react-router";
 import {Grid, GridItem, Sidebar} from "../../common";
 import {Error} from "../../common/routing";
+import {ProtectedRoute} from "../../../router-components";
 
 import AdminLinks from "../../../static/admin-links";
 
@@ -42,9 +43,9 @@ class Admin extends Component {
           <Sidebar isExtended={this.state.isExtended} extendSidebar={this.extendSidebar} items={AdminLinks}/>
           <GridItem variant={{classes: "overflow-y-scroll"}}>
           <Switch>
-            <Route strict path={`${this.props.match.path}/dashboard`} component={Dashboard}/>
-            <Route strict path={`${this.props.match.path}/projects`} component={Projects}/>
-            <Route strict path={`${this.props.match.path}/skills`} component={Skills}/>
+            <ProtectedRoute strict path={`${this.props.match.path}/dashboard`} component={Dashboard}/>
+            <ProtectedRoute strict path={`${this.props.match.path}/projects`} component={Projects}/>
+            <ProtectedRoute strict path={`${this.props.match.path}/skills`} component={Skills}/>
             <Route component={Error}/>
           </Switch>
           </GridItem>

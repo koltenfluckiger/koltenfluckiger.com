@@ -12,7 +12,6 @@ App.use("/", Routes);
 
 if (env === "production") {
   global.projectPath = Path.join(global.appRoot, "react-koltenfluckiger.com", "build/");
-
   App.use(Express.static(global.projectPath));
   App.get("/*", (req, res) => {
     return res.sendFile(global.projectPath + "/index.html");

@@ -1,4 +1,4 @@
-const AdminService = require("./admin");
+const AdminService = require("./auth");
 const DatabaseService = require("./database");
 const DataParserService = require("./dataparser");
 const FileService = require("./file");

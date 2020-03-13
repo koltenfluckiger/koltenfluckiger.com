@@ -1,11 +1,11 @@
-const AdminController = require("./admincontroller");
+const AuthController = require("./authcontroller");
 const ContactController = require("./contactcontroller");
 const ProjectsController = require("./projectcontroller");
 const SkillController = require("./skillcontroller");
 const SubSkillController = require("./subskillcontroller");
 
 module.exports = {
-  AdminController,
+  AuthController,
   ContactController,
   ProjectsController,
   SkillController,

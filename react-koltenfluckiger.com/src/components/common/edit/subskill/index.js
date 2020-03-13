@@ -57,7 +57,7 @@ class SubSkill extends Component {
       searchTags: subskillSearchTags
     };
     try {
-      const results = await AxiosHandler.put("/subskills/edit", payload, {type: "multiPart", params: {query: {
+      const results = await AxiosHandler.put("/subskills/edit", payload, {type: "json", params: {query: {
         filter: {
           _id: this.props._id
         }

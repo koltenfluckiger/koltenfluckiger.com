@@ -6,7 +6,7 @@ const logger = require('node-logger').createLogger('/tmp/development.log');
 const secret = process.env.BCRYPT_SECRET;
 const {Database, Admin} = require("../../models");
 
-class AdminService {
+class AuthService {
 
   async compare(data) {
     try {
@@ -45,4 +45,4 @@ class AdminService {
   }
 }
 
-module.exports = new AdminService();
+module.exports = new AuthService();
