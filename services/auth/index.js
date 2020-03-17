@@ -16,7 +16,7 @@ class AuthService {
       if(passwordValid && secretKeyValid){
         return Promise.resolve();
       }
-      else{;
+      else{
         return Promise.reject();
       }
     } catch {
@@ -33,7 +33,7 @@ class AuthService {
       if (passwordMatch && secretKeyMatch){
         const token = await jwt.sign({
           username: payload.username
-        }, secret, {expiresIn: "24h"});
+        }, secret, {expiresIn: "168h"});
         return Promise.resolve(token);
       }
       else {

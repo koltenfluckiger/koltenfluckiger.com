@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Error} from "../common/routing";
-import AxiosHandler from "axios-api-handler"
 
 import Main from "./main";
 import Admin from "./admin";
