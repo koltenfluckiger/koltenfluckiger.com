@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const logger = require('node-logger').createLogger('/tmp/development.log');
 
-const secret = process.env.BCRYPT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 class AuthMiddleware {
 
@@ -13,7 +13,7 @@ class AuthMiddleware {
       return res.status(401).redirect("/");
     }
     try {
-      await jwt.verify(token, secret);
+      await jwt.verify(token, JWT_SECRET);
       return next();
     } catch  {
       return res.status(401).redirect("/");

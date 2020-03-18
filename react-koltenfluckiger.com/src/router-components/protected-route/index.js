@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {withRouter} from "react-router";
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {LoadingScreen} from "../../components/common"
 import AxiosHandler from "axios-api-handler";
@@ -32,4 +33,4 @@ const ProtectedRoute = ({
     return (<Redirect to="/"></Redirect>)
   }
 }
-export default ProtectedRoute;
+export default withRouter(ProtectedRoute);
