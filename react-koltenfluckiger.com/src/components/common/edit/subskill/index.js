@@ -29,13 +29,15 @@ class SubSkill extends Component {
   async handleDelete() {
     try {
       await AxiosHandler.delete("/subskills", {
-        type: "json",
         params: {
           query: {
             filter: {
               _id: this.props._id
             }
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       })
       this.props.history.go(this.props.location.pathname);
@@ -57,11 +59,16 @@ class SubSkill extends Component {
       searchTags: subskillSearchTags
     };
     try {
-      const results = await AxiosHandler.put("/subskills/edit", payload, {type: "json", params: {query: {
+      const results = await AxiosHandler.put("/subskills/edit", {payload: payload, params: {query: {
         filter: {
           _id: this.props._id
         }
-      }}});
+      }
+    },
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
       if (results.status === 200) {
         this.props.history.go(this.props.location.pathname);
       }
@@ -73,7 +80,6 @@ class SubSkill extends Component {
   async componentDidMount() {
     try {
       const subskill = await AxiosHandler.get(`/subskills/${this.props._id}`, {
-        type: "json",
         params: {
           populate: {
             field: "subSkills"
@@ -83,6 +89,9 @@ class SubSkill extends Component {
               _id: this.props._id
             }
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       });
       this.setState({loading: false, subskill: subskill.data});

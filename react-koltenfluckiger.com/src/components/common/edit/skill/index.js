@@ -29,13 +29,15 @@ class Skill extends Component {
   async handleDelete() {
     try {
       await AxiosHandler.delete("/skills", {
-        type: "json",
         params: {
           query: {
             filter: {
               _id: this.props._id
             }
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       })
       this.props.history.go(this.props.location.pathname);
@@ -58,11 +60,19 @@ class Skill extends Component {
       abbreviation: abbreviation
     };
     try {
-      const results = await AxiosHandler.put("/skills/edit", payload, {type: "json", params: {query: {
-        filter: {
-          _id: this.props._id
+      const results = await AxiosHandler.put("/skills/edit", {
+        payload: payload,
+        params: {
+          query: {
+            filter: {
+              _id: this.props._id
+            }
+          }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
-      }}});
+      });
       if (results.status === 200) {
         this.props.history.go(this.props.location.pathname);
       }
@@ -74,7 +84,6 @@ class Skill extends Component {
   async componentDidMount() {
     try {
       const skill = await AxiosHandler.get(`/skills/${this.props._id}`, {
-        type: "json",
         params: {
           populate: {
             field: "subSkills"
@@ -84,6 +93,9 @@ class Skill extends Component {
               _id: this.props._id
             }
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       });
       this.setState({loading: false, skill: skill.data});
@@ -101,24 +113,40 @@ class Skill extends Component {
       return <LoadingScreen/>
     }
     return (<div className={styles.subcontainer}>
-      <div onClick={() => {onExit(type)}} className={styles.exitContainer}>
-        <Icon variant={{classes: "delete-icon sml fa fa-times"}}/>
+      <div onClick={() => {
+          onExit(type)
+        }} className={styles.exitContainer}>
+        <Icon variant={{
+            classes: "delete-icon sml fa fa-times"
+          }}/>
       </div>
       <Form handleSubmit={this.handleSubmit} encType="urlEncoded">
         <FormGroup>
-          <Input id="skill-title" variant={{classes: "admin-input"}} isRequired="isRequired" name="title" autoComplete='off' type='text' placeholder='Title' defaultValue={skill.title}/>
-          <Input id="skill-abbrv" variant={{classes: "admin-input"}} isRequired="isRequired" name="abbreviation" autoComplete='off' type='text' placeholder='Abbreviation' defaultValue={skill.abbreviation}/>
+          <Input id="skill-title" variant={{
+              classes: "admin-input"
+            }} isRequired="isRequired" name="title" autoComplete='off' type='text' placeholder='Title' defaultValue={skill.title}/>
+          <Input id="skill-abbrv" variant={{
+              classes: "admin-input"
+            }} isRequired="isRequired" name="abbreviation" autoComplete='off' type='text' placeholder='Abbreviation' defaultValue={skill.abbreviation}/>
         </FormGroup>
         <FormGroup>
-          <Tagger id="skill-subskills" variant={{classes: "taggerInput"}} name="subSkills" placeholder='Subskills' whiteListTags={skill.subSkills} options={{
+          <Tagger id="skill-subskills" variant={{
+              classes: "taggerInput"
+            }} name="subSkills" placeholder='Subskills' whiteListTags={skill.subSkills} options={{
               allow_spaces: true,
               onlyWhiteList: true,
-              defaultTags: skill.subSkills ? skill.subSkills : []
+              defaultTags: skill.subSkills
+                ? skill.subSkills
+                : []
             }}/>
         </FormGroup>
         <FormGroup>
-          <Button id="skill-submit" type="submit" variant={{classes: "button-form-control button green"}} text="Submit Changes"/>
-          <Button onClick={handleDelete} type="button" variant={{classes: "button-form-control button red"}} text="Delete"/>
+          <Button id="skill-submit" type="submit" variant={{
+              classes: "button-form-control button green"
+            }} text="Submit Changes"/>
+          <Button onClick={handleDelete} type="button" variant={{
+              classes: "button-form-control button red"
+            }} text="Delete"/>
         </FormGroup>
       </Form>
     </div>)
