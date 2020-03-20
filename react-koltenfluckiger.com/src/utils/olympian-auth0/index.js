@@ -15,8 +15,9 @@ export const Olympian0Provider = ({
     }
     initOlympian0Auth();
   }, []);
+
   return (<Olympian0Context.Provider value={{
-      getToken: (...p) => olympianAuth0.getToken(...p)
+      getToken: () => olympianAuth0.getToken()
     }}>
     {children}
   </Olympian0Context.Provider>)

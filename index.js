@@ -9,11 +9,12 @@ const CookieParser = require("cookie-parser");
 const XSS = require("xss-clean");
 const MongoSanitize = require("express-mongo-sanitize");
 const Helment = require("helmet");
+const {AuthMiddleware} = require("./middlewares");
 const env = process.env.NODE_ENV;
 
 global.appRoot = Path.resolve(__dirname);
 
-App.use("/", Routes);
+App.use("/",AuthMiddleware.checkAuth, Routes);
 App.use(MongoSanitize());
 App.use(XSS());
 App.use(Helment());

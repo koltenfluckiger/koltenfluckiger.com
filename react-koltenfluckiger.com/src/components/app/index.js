@@ -5,29 +5,26 @@ import {useOlympian0} from "../../utils/olympian-auth0";
 import Main from "./main";
 import Admin from "./admin";
 
-function App() {
+const App = () => {
 
-    const {getToken} = useOlympian0();
-
-    useEffect(() => {
-      const initAuth = async () =>{
-        try {
-          await getToken();
-        } catch(err) {
-          console.log(err);
-        }
+  const {getToken} = useOlympian0();
+  useEffect(() => {
+    const token = async () => {
+      try {
+        await getToken();
+      } catch (err) {
+        console.log(err)
       }
-      initAuth();
-    }, []);
-
-    return (
-      <Router>
-        <Switch>
-        <Route path="/" exact component={Main}/>
-        <Route path="/admin" strict component={Admin}/>
-        <Route component={Error}/>
-      </Switch>
-      </Router>)
+    }
+    token();
+  }, []);
+  return (<Router>
+    <Switch>
+      <Route path="/" exact component={Main}/>
+      <Route path="/admin" strict component={Admin}/>
+      <Route component={Error}/>
+    </Switch>
+  </Router>)
 }
 
 export default App;

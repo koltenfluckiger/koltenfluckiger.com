@@ -6,6 +6,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 class AuthMiddleware {
 
   async checkAuth(req, res, next) {
+    console.log(req.headers)
     const token = req.cookies.token;
     if (!token) {
       console.log("No token found, please login");

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import ClassMapper from "sass-css-modules-class-mapper";
-import PropTypes from 'prop-types';
 
 import styles from "./textarea.module.css";
 
@@ -12,13 +11,14 @@ class TextArea extends React.PureComponent {
   }
 
   render() {
+    const {variant} = this;
     const {name, rows, required, maxLength, placeholder, defaultValue} = this.props;
 
     if(required){
-      return <textarea name={name} rows={rows} className={this.variant} autoComplete="off" maxLength={this.maxLength} placeholder={placeholder} required defaultValue={this.props.defaultValue} />
+      return <textarea name={name} rows={rows} className={variant} autoComplete="off" maxLength={maxLength} placeholder={placeholder} required defaultValue={defaultValue} />
     }
     else{
-      return <textarea name={name} rows={rows} className={this.variant} autoComplete="off" maxLength={maxLength} placeholder={placeholder} defaultValue={this.props.defaultValue} />
+      return <textarea name={name} rows={rows} className={variant} autoComplete="off" maxLength={maxLength} placeholder={placeholder} defaultValue={defaultValue} />
     }
   }
 }

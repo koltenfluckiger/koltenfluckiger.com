@@ -12,21 +12,16 @@ export default class Olympian0Client {
     this.apiKey = options.apiKey;
   };
 
-  /**
-   * getToken
-   */
   public async getToken() {
     try {
-      const response = await AxiosHandler.post("https://api.olympian.dev/auth/generate", {headers: {"Authorization": `Bearer ${this.apiKey}`, "X-APP-ID": `${this.appID}`}});
+      const response = await AxiosHandler.post("https://api.olympian.dev/auth/generate", {headers: {"Authorization": `Bearer ${this.apiKey}`, "x-app-id": `${this.appID}`}});
       const token = response.data.token;
-      console.log(token);
       AxiosHandler.setHeaders({
-        'Authorization': `Bearer ${token}`
+        Authorization: `Bearer ${token}`
       })
-      return Promise.resolve();
     } catch (error) {
       console.log(error);
-      return Promise.reject(error);
     }
+    return this.getToken;
   }
 }
