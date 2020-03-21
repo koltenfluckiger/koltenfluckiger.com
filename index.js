@@ -14,12 +14,12 @@ const env = process.env.NODE_ENV;
 
 global.appRoot = Path.resolve(__dirname);
 
-App.use("/",AuthMiddleware.checkAuth, Routes);
+App.use(BodyParser.json());
+App.use(CookieParser());
+App.use("/", AuthMiddleware.checkAuth, Routes);
 App.use(MongoSanitize());
 App.use(XSS());
 App.use(Helment());
-App.use(BodyParser.json());
-App.use(CookieParser(process.env.SQL_SECRET));
 
 if (env === "production") {
   global.projectPath = Path.join(global.appRoot, "react-koltenfluckiger.com", "build/");

@@ -3,10 +3,9 @@ const logger = require('node-logger').createLogger('/tmp/development.log');
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-class AuthMiddleware {
+class APIMiddleware {
 
   async checkAuth(req, res, next) {
-    console.log(req.headers)
     return next();
     if (!req.cookies.token) {
       console.log("No token found, please login");
@@ -22,4 +21,4 @@ class AuthMiddleware {
   }
 }
 
-module.exports = new AuthMiddleware();
+module.exports = new APIMiddleware();
