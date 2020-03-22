@@ -11,16 +11,18 @@ export const Olympian0Provider = ({
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     const initOlympian0Auth = async () => {
-      const authClient = await createOlympianAuth0Client(initOptions);
-      setAuth0(authClient);
-      setLoading(false);
+      try {
+        const authClient = await createOlympianAuth0Client(initOptions);
+        setAuth0(authClient);
+        setLoading(false);
+      } catch(err) {
+      }
     }
     initOlympian0Auth();
   }, []);
 
   return (<Olympian0Context.Provider value={{
-      loading,
-      getToken: () => olympianAuth0.getToken()
+      loading
     }}>
     {children}
   </Olympian0Context.Provider>)

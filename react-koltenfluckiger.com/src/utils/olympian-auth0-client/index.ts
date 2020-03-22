@@ -12,7 +12,8 @@ export default async function createOlympianAuth0Client(options: Olympian0AuthCl
   const auth0 = new Olympian0Client(options);
   try {
     await auth0.getToken();
+    return Promise.resolve(auth0);
   } catch (error) {
+    return Promise.reject(error);
   }
-  return auth0;
 }

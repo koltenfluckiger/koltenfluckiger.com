@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const logger = require('node-logger').createLogger('/tmp/development.log');
+const Logger = require('node-logger').createLogger('/tmp/development.log');
 
-const secret = process.env.BCRYPT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET;
 const {Database, Admin} = require("../../models");
 
 class AuthService {
@@ -33,7 +33,7 @@ class AuthService {
       if (passwordMatch && secretKeyMatch){
         const token = await jwt.sign({
           username: payload.username
-        }, secret, {expiresIn: "168h"});
+        }, JWT_SECRET, {expiresIn: "168h"});
         return Promise.resolve(token);
       }
       else {

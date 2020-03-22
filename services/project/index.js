@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const logger = require('node-logger').createLogger('/tmp/development.log');
+const Logger = require('node-logger').createLogger('/tmp/development.log');
 
 const {Database, Project, SubSkill} = require("../../models");
 

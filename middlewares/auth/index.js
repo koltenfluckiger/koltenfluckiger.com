@@ -1,14 +1,12 @@
 const jwt = require("jsonwebtoken");
-const logger = require('node-logger').createLogger('/tmp/development.log');
+const Logger = require('node-logger').createLogger('/tmp/development.log');
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-class APIMiddleware {
+class AuthMiddleware {
 
   async checkAuth(req, res, next) {
-    return next();
     if (!req.cookies.token) {
-      console.log("No token found, please login");
       logger.info("No token found, please login");
       return res.status(401).redirect("/");
     }
@@ -21,4 +19,4 @@ class APIMiddleware {
   }
 }
 
-module.exports = new APIMiddleware();
+module.exports = new AuthMiddleware();
