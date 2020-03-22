@@ -53,7 +53,6 @@ class Skills extends Component {
   async componentDidMount() {
     try {
       const skills = await AxiosHandler.get('/skills', {
-        type: "json",
         params: {
           populate: {
             field: "subSkills"
@@ -61,10 +60,12 @@ class Skills extends Component {
           sort: {
             _id: "asc"
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       });
       const subskills = await AxiosHandler.get('/subskills', {
-        type: "json",
         params: {
           sort: {
             _id: "asc"
@@ -73,6 +74,9 @@ class Skills extends Component {
             title: 1,
             searchTags: 1
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       });
       this.setState({loading: false, skills: skills.data, subskills: subskills.data});
@@ -84,13 +88,15 @@ class Skills extends Component {
   async deleteSkill(_id) {
     try {
       await AxiosHandler.delete("/subskills", {
-        type: "json",
         params: {
           query: {
             filter: {
               _id: _id
             }
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       });
       this.props.history.go(this.props.location.pathname);
@@ -102,13 +108,15 @@ class Skills extends Component {
   async deleteSubSkill(_id) {
     try {
       await AxiosHandler.delete("/subskills", {
-        type: "json",
         params: {
           query: {
             filter: {
               _id: _id
             }
           }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       });
       this.props.history.go(this.props.location.pathname);
@@ -131,7 +139,12 @@ class Skills extends Component {
       abbreviation: abbreviation
     };
     try {
-      const results = await AxiosHandler.post("/skills", payload, {type: "json"});
+      const results = await AxiosHandler.post("/skills", {
+        payload: payload,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
       if (results.status === 200) {
         this.props.history.go(this.props.location.pathname);
       }
@@ -153,7 +166,12 @@ class Skills extends Component {
       searchTags: subskillSearchTags
     };
     try {
-      const results = await AxiosHandler.post("/subskills", payload, {type: "json"});
+      const results = await AxiosHandler.post("/subskills", {
+        payload: payload,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
       if (results.status === 200) {
         this.props.history.go(this.props.location.pathname);
       }
@@ -202,58 +220,86 @@ class Skills extends Component {
           : null
       }
       <SubContainer>
-        <Grid variant={{classes: "two-column-flexible-mdm-gap mdm"}}>
+        <Grid variant={{
+            classes: "two-column-flexible-mdm-gap mdm"
+          }}>
           <GridItem>
             <Title text="Skills"/>
-            <Panel variant={{classes: "panel"}}>
-              <Grid variant={{classes: "three mdm"}}>
+            <Panel variant={{
+                classes: "panel"
+              }}>
+              <Grid variant={{
+                  classes: "three mdm"
+                }}>
                 {skills.map(skill => (<GridItem key={skill._id}><Skill onClick={onClick} key={skill._id} title={skill.title} _id={skill._id} subSkills={skill.subSkills} abbreviation={skill.abbreviation} type="popupSkill"/></GridItem>))}
               </Grid>
             </Panel>
           </GridItem>
           <GridItem>
             <Title text="Subskills"/>
-            <Panel variant={{classes: "panel"}}>
-              <Grid variant={{classes: "three mdm"}}>
+            <Panel variant={{
+                classes: "panel"
+              }}>
+              <Grid variant={{
+                  classes: "three mdm"
+                }}>
                 {subskills.map(subskill => (<GridItem key={subskill._id}><Subskill onClick={onClick} key={subskill.title} title={subskill.title} _id={subskill._id} deleteSubSkill={this.deleteSubSkill} searchTags={subskill.searchTags} type="popupSubSkill"/></GridItem>))}
               </Grid>
             </Panel>
           </GridItem>
           <GridItem>
             <Title text="New Skill"/>
-            <Panel variant={{classes: "panel visible padded-content-mdm"}}>
+            <Panel variant={{
+                classes: "panel visible padded-content-mdm"
+              }}>
               <Form handleSubmit={this.handleSkillSubmit} encType="urlEncoded">
                 <FormGroup>
-                  <Input id="skill-title" variant={{classes: "admin-input"}} isRequired={true} name="title" autoComplete='off' type='text' placeholder='Title'/>
-                  <Input id="skill-abbrv" variant={{classes: "admin-input"}} isRequired={true} name="abbreviation" autoComplete='off' type='text' placeholder='Abbreviation'/>
+                  <Input id="skill-title" variant={{
+                      classes: "admin-input"
+                    }} isRequired={true} name="title" autoComplete='off' type='text' placeholder='Title'/>
+                  <Input id="skill-abbrv" variant={{
+                      classes: "admin-input"
+                    }} isRequired={true} name="abbreviation" autoComplete='off' type='text' placeholder='Abbreviation'/>
                 </FormGroup>
                 <FormGroup>
-                  <Tagger id="skill-subskills" variant={{classes: "taggerInput"}} name="subSkills" placeholder='Subskills' whiteListTags={this.state.subskills} options={{
+                  <Tagger id="skill-subskills" variant={{
+                      classes: "taggerInput"
+                    }} name="subSkills" placeholder='Subskills' whiteListTags={this.state.subskills} options={{
                       allow_spaces: true,
                       onlyWhiteList: true
                     }}/>
                 </FormGroup>
                 <FormGroup>
-                  <Button id="skill-submit" type="submit" variant={{classes: "button-form-control button green"}} text="Submit New Skill"/>
+                  <Button id="skill-submit" type="submit" variant={{
+                      classes: "button-form-control button green"
+                    }} text="Submit New Skill"/>
                 </FormGroup>
               </Form>
             </Panel>
           </GridItem>
           <GridItem>
             <Title text="New Subskill"/>
-            <Panel variant={{classes: "panel visible padded-content-mdm"}}>
+            <Panel variant={{
+                classes: "panel visible padded-content-mdm"
+              }}>
               <Form handleSubmit={this.handleSubSkillSubmit} encType="urlEncoded">
                 <FormGroup>
-                  <Input id="subskill-title" variant={{classes: "admin-input"}} isRequired="isRequired" name="title" autoComplete='off' type='text' placeholder='Title'/>
+                  <Input id="subskill-title" variant={{
+                      classes: "admin-input"
+                    }} isRequired="isRequired" name="title" autoComplete='off' type='text' placeholder='Title'/>
                 </FormGroup>
                 <FormGroup>
-                  <Tagger id="subskill-search-tags" variant={{classes: "taggerInput"}} name="subskillSearchTags" placeholder='Search Tags' options={{
+                  <Tagger id="subskill-search-tags" variant={{
+                      classes: "taggerInput"
+                    }} name="subskillSearchTags" placeholder='Search Tags' options={{
                       allow_spaces: true,
                       onlyWhiteList: false
                     }}/>
                 </FormGroup>
                 <FormGroup>
-                  <Button id="subskill-submit" type="submit" variant={{classes: "button-form-control button green"}} text="Submit New Subskill"/>
+                  <Button id="subskill-submit" type="submit" variant={{
+                      classes: "button-form-control button green"
+                    }} text="Submit New Subskill"/>
                 </FormGroup>
               </Form>
             </Panel>

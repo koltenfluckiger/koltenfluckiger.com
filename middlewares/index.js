@@ -1,7 +1,9 @@
-const AuthMiddleware = require("./auth-middleware");
-const FileMiddleware = require("./file-middleware");
+const APIMiddleware = require("./api");
+const AuthMiddleware = require("./auth");
+const FileMiddleware = require("./file");
 
 module.exports = {
+  APIMiddleware,
   AuthMiddleware,
   FileMiddleware
 };

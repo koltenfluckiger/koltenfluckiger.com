@@ -26,44 +26,46 @@ class Project extends Component {
   async componentDidMount() {
     try {
       const project = await AxiosHandler.get(`/projects/${this._id}`, {
-        type: "json",
         params: {
-            populate: {
-              field: "subSkills"
-            },
-            query: {
-              filter: {
-                _id: this._id
-              }
+          populate: {
+            field: "subSkills"
+          },
+          query: {
+            filter: {
+              _id: this._id
             }
+          }
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
-        });
-        this.setState({loading: false, project: project.data});
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
-    render() {
-      const {project, loading} = this.state;
-      if (loading) {
-        return <LoadingScreen/>
-      }
-
-      return (<Container>
-        <SubContainer>
-          <ContentCard>
-            <BackButton/>
-            <CurrentProject.Title text={project.title}/>
-            <CurrentProject.Date text={project.date}/>
-            <CurrentProject.Skills subskills={project.subSkills}/>
-            <CurrentProject.Description content={project.description}/>
-            <CurrentProject.Media screenshots={project.screenshotURLS}/>
-            <CurrentProject.Buttons sourceCodeLink={project.sourceCodeLink} hostedLink={project.hostedLink} hostedStatus={project.hostedStatus}/>
-          </ContentCard>
-        </SubContainer>
-      </Container>)
+      });
+      this.setState({loading: false, project: project.data});
+    } catch (err) {
+      console.log(err);
     }
   }
 
-  export default Project;
+  render() {
+    const {project, loading} = this.state;
+    if (loading) {
+      return <LoadingScreen/>
+    }
+
+    return (<Container>
+      <SubContainer>
+        <ContentCard>
+          <BackButton/>
+          <CurrentProject.Title text={project.title}/>
+          <CurrentProject.Date text={project.date}/>
+          <CurrentProject.Skills subskills={project.subSkills}/>
+          <CurrentProject.Description content={project.description}/>
+          <CurrentProject.Media screenshots={project.screenshotURLS}/>
+          <CurrentProject.Buttons sourceCodeLink={project.sourceCodeLink} hostedLink={project.hostedLink} hostedStatus={project.hostedStatus}/>
+        </ContentCard>
+      </SubContainer>
+    </Container>)
+  }
+}
+
+export default Project;

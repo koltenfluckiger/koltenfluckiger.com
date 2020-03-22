@@ -30,7 +30,7 @@ class Projects extends Component {
 
   async componentDidMount() {
     try {
-      const projects = await AxiosHandler.get("/projects", {type: "json",
+      const projects = await AxiosHandler.get("/projects", {
         params: {
           populate: {
           field: "subSkills"
@@ -43,6 +43,8 @@ class Projects extends Component {
         sort: {
           searchTags: 1
         }
+      },headers: {
+        "Content-Type": "application/json"
       }
       });
       this.setState({loading: false, projects: projects.data, filteredProjects: projects.data});
