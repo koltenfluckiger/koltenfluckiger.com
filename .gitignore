@@ -3,6 +3,7 @@
 .git
 .env
 /builds
-config.js
+*config.js
 .atom-build.yaml
 .*
+
