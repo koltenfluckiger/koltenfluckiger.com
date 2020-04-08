@@ -12,7 +12,6 @@ class AuthService {
     try {
       const passwordValid = await bcrypt.compare(data.inputPassword, data.hashedUserPassword);
       const secretKeyValid = await bcrypt.compare(data.inputSecretKey, data.hashedUserSecretKey);
-
       if(passwordValid && secretKeyValid){
         return Promise.resolve();
       }
@@ -37,7 +36,7 @@ class AuthService {
         return Promise.resolve(token);
       }
       else {
-        return Promise.reject();
+        return Promise.reject("Incorrect match");
       }
     } catch(err) {
       return Promise.reject(err);
