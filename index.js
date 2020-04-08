@@ -3,6 +3,7 @@ require("./globals");
 
 const Express = require("express");
 const App = Express();
+const Cors = require("cors");
 const BodyParser = require("body-parser");
 const CookieParser = require("cookie-parser");
 const Helment = require("helmet");
@@ -15,7 +16,7 @@ const {APIMiddleware} = require("./middlewares");
 
 App.use(BodyParser.json());
 App.use(CookieParser());
-App.use("/", APIMiddleware.verify, Routes);
+App.use("/api", APIMiddleware.verify, Routes);
 App.use(MongoSanitize());
 App.use(XSS());
 App.use(Helment());

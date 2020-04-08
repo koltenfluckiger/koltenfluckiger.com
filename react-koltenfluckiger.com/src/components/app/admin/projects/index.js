@@ -75,7 +75,7 @@ class Projects extends Component {
     formData.set("searchTags", searchTags);
 
     try {
-      const results = await AxiosHandler.post("/projects", {
+      const results = await AxiosHandler.post("/api/projects", {
         payload: formData,
         headers: {
           "Content-Type": "multipart/form-data"

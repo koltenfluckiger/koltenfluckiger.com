@@ -17,7 +17,7 @@ export default class Olympian0Client {
       const response = await AxiosHandler.post("https://api.olympian.dev/api/oauth/generate", { headers: { "Authorization": `Bearer ${this.apiKey}`, "x-app-id": `${this.appID}` } });
       const token = response.headers['authorization'];
       if(!token) return Promise.reject();
-      const axiosHandler = AxiosHandler._getInstance();
+	  const axiosHandler = AxiosHandler._getAxiosInstance()
       axiosHandler.defaults.headers.common['Authorization'] = token
       return Promise.resolve();
   } catch(err) {

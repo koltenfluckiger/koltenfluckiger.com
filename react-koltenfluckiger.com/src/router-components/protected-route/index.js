@@ -15,7 +15,7 @@ const ProtectedRoute = ({
   useEffect(() => {
     const initAuth = async () => {
       try {
-        await AxiosHandler.get("/auth", {type: "json"})
+        await AxiosHandler.get("/api/auth", {type: "json"})
         setAuth(true)
         setLoading(false)
       } catch (err) {

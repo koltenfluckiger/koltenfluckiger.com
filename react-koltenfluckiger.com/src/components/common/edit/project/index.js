@@ -31,7 +31,7 @@ class Project extends Component {
 
   async handleDelete() {
     try {
-      await AxiosHandler.delete("/projects", {
+      await AxiosHandler.delete("/api/projects", {
         params: {
           query: {
             filter: {
@@ -63,7 +63,7 @@ class Project extends Component {
     formData.set("searchTags", searchTags);
 
     try {
-      const results = await AxiosHandler.put("/projects/edit", {
+      const results = await AxiosHandler.put("/api/projects/edit", {
         payload: formData,
         params: {
           query: {

@@ -61,7 +61,7 @@ class Contact extends Component {
     }
 
     try {
-      const response = await AxiosHandler.post("/contact/email/send", payload, {type: "json"});
+      const response = await AxiosHandler.post("/api/contact/email/send", payload, {type: "json"});
       if (response.data.success) {
         this.setState({success: true});
         setTimeout(() => {

@@ -28,7 +28,7 @@ class SubSkill extends Component {
 
   async handleDelete() {
     try {
-      await AxiosHandler.delete("/subskills", {
+      await AxiosHandler.delete("/api/subskills", {
         params: {
           query: {
             filter: {
@@ -59,7 +59,7 @@ class SubSkill extends Component {
       searchTags: subskillSearchTags
     };
     try {
-      const results = await AxiosHandler.put("/subskills/edit", {payload: payload, params: {query: {
+      const results = await AxiosHandler.put("/api/subskills/edit", {payload: payload, params: {query: {
         filter: {
           _id: this.props._id
         }

@@ -28,7 +28,7 @@ class Skill extends Component {
 
   async handleDelete() {
     try {
-      await AxiosHandler.delete("/skills", {
+      await AxiosHandler.delete("/api/skills", {
         params: {
           query: {
             filter: {
@@ -60,7 +60,7 @@ class Skill extends Component {
       abbreviation: abbreviation
     };
     try {
-      const results = await AxiosHandler.put("/skills/edit", {
+      const results = await AxiosHandler.put("/api/skills/edit", {
         payload: payload,
         params: {
           query: {

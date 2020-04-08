@@ -14,7 +14,7 @@ class ProjectsController {
       return res.sendStatus(200);
     } catch (err) {
       console.log(err);
-      return res.sendStatus(404);
+      return res.sendStatus(400);
     }
   }
 
@@ -45,7 +45,7 @@ class ProjectsController {
       return res.sendStatus(200);
     } catch (err) {
       console.log(err);
-      return res.sendStatus(404);
+      return res.sendStatus(400);
     }
   }
   async getOneByQuery(req, res) {
@@ -55,20 +55,18 @@ class ProjectsController {
       return res.json(projects);
     } catch (err) {
       console.log(err);
-      return res.sendStatus(300);
+      return res.sendStatus(400);
     }
   }
 
   async getByQuery(req, res) {
     try {
-	  console.log(req.query);
       const query = req.query;
       const projects = await ProjectService.findAllAndPopulate(query);
-	  console.log(projects);
       return res.json(projects);
     } catch (err) {
       console.log(err);
-      return res.sendStatus(300);
+      return res.sendStatus(400);
     }
   }
 }

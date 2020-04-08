@@ -87,7 +87,7 @@ class Skills extends Component {
 
   async deleteSkill(_id) {
     try {
-      await AxiosHandler.delete("/subskills", {
+      await AxiosHandler.delete("/api/subskills", {
         params: {
           query: {
             filter: {
@@ -107,7 +107,7 @@ class Skills extends Component {
 
   async deleteSubSkill(_id) {
     try {
-      await AxiosHandler.delete("/subskills", {
+      await AxiosHandler.delete("/api/subskills", {
         params: {
           query: {
             filter: {
@@ -139,7 +139,7 @@ class Skills extends Component {
       abbreviation: abbreviation
     };
     try {
-      const results = await AxiosHandler.post("/skills", {
+      const results = await AxiosHandler.post("/api/skills", {
         payload: payload,
         headers: {
           "Content-Type": "application/json"
@@ -166,7 +166,7 @@ class Skills extends Component {
       searchTags: subskillSearchTags
     };
     try {
-      const results = await AxiosHandler.post("/subskills", {
+      const results = await AxiosHandler.post("/api/subskills", {
         payload: payload,
         headers: {
           "Content-Type": "application/json"

@@ -13,7 +13,7 @@ class APIMiddleware {
 
     _setPublicKey() {
         this.client.getSigningKeys((err, keys) => {
-            if (!keys[0])
+            if (!keys)
                 return null;
             this.publicKey = keys[0].rsaPublicKey;
         })
@@ -25,10 +25,9 @@ class APIMiddleware {
 
     async verify(req, res, next) {
         try {
-			console.log(req.headers);
-            if (!req.headers.authorization)
+            if (!req.headers.access_token)
                 return res.sendStatus(401);
-            const token = req.headers.authorization.split(" ")[1];
+            const token = req.headers.access_token.split(" ")[1];
             await JWT.verify(token, this.publicKey);
             return next();
         } catch (err) {

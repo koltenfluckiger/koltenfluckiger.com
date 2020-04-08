@@ -1,0 +1,61 @@
+.sml {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.mdm {
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.lrg {
+  font-size: 1.6rem;
+  line-height: 1.9;
+}
+
+.sml-btn {
+  width:  6rem;
+  line-height: 1.5;
+}
+.mdm-btn {
+  width: 8rem;
+  line-height: 1.7;
+}
+.lrg-btn {
+  width: 10rem;
+  line-height: 1.9;
+}
+
+.link-button {
+  -webkit-user-select: none;
+  border-radius: 0.4rem;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.space-left {
+  margin-left: 1.6rem;
+}
+
+.red {
+  background-color: #f15d22;
+  border: .1rem solid transparent;
+}
+
+.green {
+  background-color: #28A745;
+  border: .1rem solid transparent;
+}
+
+.blue {
+  background-color: #4C87FC;
+  border: .1rem solid transparent;
+}
