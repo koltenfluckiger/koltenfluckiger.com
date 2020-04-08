@@ -15,6 +15,7 @@ import GridItem from "./grid-item";
 import Icon from "./icon";
 import Input from "./input";
 import Label from "./label";
+import Link from "./link";
 import LoadingComponent from "./loading-component";
 import LoadingScreen from "./loading-screen";
 import Li from "./li";

@@ -1,24 +1,24 @@
-@media screen and (max-width: 64rem){
-  .mobile {
-    display: none;
-  }
+@media screen and (max-width: 64rem) {
+    .mobile {
+        display: none;
+    }
 }
 
 .sidebar-li {
-  width: 20rem;
+    width: 20rem;
 }
 
 .list-left {
-  display: inline-block;
+    display: inline-block;
 }
 
 .skill-list {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #4C87FC;
-  padding-right: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #4C87FC;
+    padding-right: 1rem;
 }
 
 .skills-subskills-li {
-  padding: 0.5rem 0rem;
+    padding: 0.5rem 0rem;
 }
