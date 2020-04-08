@@ -61,8 +61,10 @@ class ProjectsController {
 
   async getByQuery(req, res) {
     try {
+	  console.log(req.query);
       const query = req.query;
       const projects = await ProjectService.findAllAndPopulate(query);
+	  console.log(projects);
       return res.json(projects);
     } catch (err) {
       console.log(err);

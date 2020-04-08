@@ -1,4 +1,5 @@
-require('dotenv').config();
+require("dotenv").config();
+require("./globals");
 
 const Express = require("express");
 const App = Express();
@@ -12,10 +13,6 @@ const XSS = require("xss-clean");
 
 const {APIMiddleware} = require("./middlewares");
 
-const env = process.env.NODE_ENV;
-
-global.appRoot = Path.resolve(__dirname);
-
 App.use(BodyParser.json());
 App.use(CookieParser());
 App.use("/", APIMiddleware.verify, Routes);
@@ -23,7 +20,7 @@ App.use(MongoSanitize());
 App.use(XSS());
 App.use(Helment());
 
-if (env === "production") {
+if (process.env.NODE_ENV === "production") {
   global.projectPath = Path.join(global.appRoot, "react-koltenfluckiger.com", "build/");
   App.use(Express.static(global.projectPath));
   App.get("/*", (req, res) => {

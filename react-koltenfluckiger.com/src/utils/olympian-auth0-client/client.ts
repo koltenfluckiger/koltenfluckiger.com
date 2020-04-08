@@ -14,13 +14,14 @@ export default class Olympian0Client {
 
   public async getToken() {
     try {
-      const response = await AxiosHandler.post("https://api.olympian.dev/auth/generate", { headers: { "Authorization": `Bearer ${this.apiKey}`, "x-app-id": `${this.appID}` } });
+      const response = await AxiosHandler.post("https://api.olympian.dev/api/oauth/generate", { headers: { "Authorization": `Bearer ${this.apiKey}`, "x-app-id": `${this.appID}` } });
       const token = response.headers['authorization'];
       if(!token) return Promise.reject();
       const axiosHandler = AxiosHandler._getInstance();
       axiosHandler.defaults.headers.common['Authorization'] = token
       return Promise.resolve();
-    } catch {
+  } catch(err) {
+	  console.log(err);
       return Promise.reject();
     }
   }

@@ -14,8 +14,9 @@ export const Olympian0Provider = ({
       try {
         const authClient = await createOlympianAuth0Client(initOptions);
         setAuth0(authClient);
-        setLoading(false);
+		setLoading(false);
       } catch(err) {
+		console.log(err);
       }
     }
     initOlympian0Auth();

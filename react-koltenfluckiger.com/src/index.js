@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./components/app";
-import Config from "./olympian-auth0-config"
+import Config from "./olympian-auth0-config.js"
 import * as serviceWorker from "./serviceWorker";
 
 import 'react-app-polyfill/ie11';
