@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import {BrowserRouter as Router, Route, Link, Redirect} from "react-router-dom";
+import {Router, Route, Link, Redirect} from "react-router-dom";
 
 class PrivateRoute extends Component {
 

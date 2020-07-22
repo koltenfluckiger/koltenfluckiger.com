@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from "react";
-import {BrowserRouter as Router, Route, Redirect} from "react-router-dom";
+import {Router, Route, Redirect} from "react-router-dom";
 import {withRouter} from "react-router";
 import {
   BackButton,

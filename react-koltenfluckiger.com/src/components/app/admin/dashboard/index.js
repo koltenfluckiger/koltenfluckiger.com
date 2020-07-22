@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Router, Route, Switch} from "react-router-dom";
 import {withRouter} from "react-router";
 import {Card, Container, Column, SubContainer, Title} from '../../../common';
 

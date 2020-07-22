@@ -1,4 +1,0 @@
-export const Config = {
-	key: "b3e16284cefb41613416936f94a18facad4989f3043fb9748c",
-	appID: "OLYMPIAN-DEVELOPMENT-VM-KFCOM-SERVER"
-}

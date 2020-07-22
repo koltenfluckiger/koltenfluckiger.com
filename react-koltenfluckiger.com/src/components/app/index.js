@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Router, Route, Switch} from "react-router-dom";
 import {LoadingScreen} from "../common";
 import {Error} from "../common/routing";
 import {useOlympian0} from "../../utils/olympian-auth0";
