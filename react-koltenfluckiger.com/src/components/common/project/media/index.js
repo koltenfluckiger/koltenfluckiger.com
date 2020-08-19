@@ -14,6 +14,11 @@ class ProjectMedia extends Component {
     this.screenshots = props.screenshots;
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
+    this.viewImage = this.viewImage.bind(this);
+  }
+
+  viewImage(src){
+      window.open(src);
   }
 
   previous() {
@@ -45,7 +50,7 @@ class ProjectMedia extends Component {
         <div className={styles.prevContainer}>
           <Icon onClick={this.previous} variant={{classes: "mdm fas fa-chevron-left"}}/>
         </div>
-        {<img className={styles.screenshot} src={this.screenshots[currentIndex]}></img>}
+        {<img className={styles.screenshot} src={this.screenshots[currentIndex]} onClick={() => this.viewImage(this.screenshots[currentIndex])}></img>}
         <div className={styles.nextContainer}>
           <Icon onClick={this.next} variant={{classes: "mdm fas fa-chevron-right"}}/>
         </div>

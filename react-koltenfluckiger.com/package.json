@@ -36,8 +36,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/parser": "^7.9.4",
+    "@babel/parser": "^7.11.3",
     "react-autocomplete-cli": "0.0.3",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7"
   }
 }

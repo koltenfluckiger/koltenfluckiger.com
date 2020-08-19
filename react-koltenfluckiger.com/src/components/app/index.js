@@ -6,6 +6,8 @@ import AxiosHandler from "axios-api-handler"
 import Main from "./main";
 import Admin from "./admin";
 
+AxiosHandler.setHeaders({"Content-Type": "application/json"})
+
 class App extends React.PureComponent {
 
   render() {

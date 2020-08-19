@@ -22,7 +22,7 @@ class Skills extends Component {
 
   async componentDidMount() {
     try {
-      const skills = await AxiosHandler.get("/skills", {type: "json", params: {
+      const skills = await AxiosHandler.get("/skills", {params: {
         populate: {
           field: "subSkills"
         },

@@ -24,12 +24,13 @@ class SubSkill extends Component {
       subskill: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   async handleDelete() {
+    console.log(this.props._id);
     try {
       await AxiosHandler.delete("/subskills", {
-        type: "json",
         params: {
           query: {
             filter: {
@@ -73,7 +74,6 @@ class SubSkill extends Component {
   async componentDidMount() {
     try {
       const subskill = await AxiosHandler.get(`/subskills/${this.props._id}`, {
-        type: "json",
         params: {
           populate: {
             field: "subSkills"

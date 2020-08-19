@@ -32,7 +32,6 @@ class Project extends Component {
   async handleDelete() {
     try {
       await AxiosHandler.delete("/projects", {
-        type: "json",
         params: {
           query: {
             filter: {

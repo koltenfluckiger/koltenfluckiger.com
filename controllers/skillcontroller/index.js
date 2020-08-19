@@ -6,7 +6,7 @@ class SkillController {
 
     const dataParserService = new DataParserService();
     const payload = await dataParserService.parseSkill(req.body);
-
+    
     try {
       await SkillService.create(payload);
       return res.sendStatus(200);

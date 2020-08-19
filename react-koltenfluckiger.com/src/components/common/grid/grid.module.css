@@ -37,7 +37,7 @@
 .two-fixed {
   position: fixed;
   display: grid;
-      grid-template-columns: auto 1fr;
+  grid-template-columns: auto 100%;
   height: 100%;
   width: 100%;
 }

@@ -4,6 +4,7 @@
   width: 100%;
   display: block;
   text-transform: uppercase;
+  padding: 1rem 0;
 }
 
 .admin-input {

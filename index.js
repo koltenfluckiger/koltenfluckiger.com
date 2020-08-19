@@ -13,7 +13,7 @@ const MongoSanitize = require("express-mongo-sanitize");
 const Path = require("path");
 const Routes = require("./routes");
 const XSS = require("xss-clean");
-
+const Cors = require("cors");
 
 App.use(BodyParser.json());
 App.use(BodyParser.urlencoded({extended:false }));

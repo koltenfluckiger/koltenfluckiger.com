@@ -7,6 +7,7 @@ class SkillService {
 
   async create(payload) {
     try {
+      console.log(payload);
       const skill = new Skill(payload);
       const status = await Database.create(skill);
       return Promise.resolve(status);

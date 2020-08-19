@@ -24,12 +24,12 @@ class Skill extends Component {
       skill: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   async handleDelete() {
     try {
       await AxiosHandler.delete("/skills", {
-        type: "json",
         params: {
           query: {
             filter: {
