@@ -12,7 +12,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^5.0.1",
     "sass-css-modules-class-mapper": "^1.0.10"
   },
   "proxy": "http://localhost:3001",
